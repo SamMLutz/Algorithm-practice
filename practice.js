@@ -1,10 +1,20 @@
-// // function fixString(str) {
-// // str = str.replace(/\s/g, '').toLowerCase();
+const log = console.log
+// ************************************************************************************************************************************************
+// take a string input and convert all the letters to lowercase
+// ************************************************************************************************************************************************
 
-// // console.log(str)
-// // }
+// function fixString(str) {
+// str = str.replace(/\s/g, '').toLowerCase();
+// console.log(str)
+// }
 
-// // fixString("Yurp and Churp")
+// es 6
+// var fixString = str => str = str.replace(/\s/g, '').toLowerCase();
+// console.log(fixString("Yurp and Churp"))
+
+// ************************************************************************************************************************************************
+// return a new array with the largest value from each array
+// ************************************************************************************************************************************************
 
 // function largestOfFour(arr) {
 //     // You can do this!
@@ -18,12 +28,40 @@
 //         largestNum[i] = arr[i][j]
 //       }
 //     }
-
 //   }
 //   return largestNum
 // } 
 
-//   largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+// es 6
+// var largestOfFour = arr => {
+//   var largestNum = [0,0,0,0]
+
+//   for (var i=0; i <arr.length; i++) {
+//     for (var j=0; j < arr[i].length; j++) {
+//       if(arr[i][j] > largestNum[i]) {
+//         largestNum[i] = arr[i][j]
+//       }
+//     }
+
+//   }
+//   return largestNum
+// }
+
+// var largestOfFour = arr => {
+//   var largestNum = [0,0,0,0]
+
+//   for (var i=0; i <arr.length; i++) {
+//     for (var j=0; j < arr[i].length; j++) {
+//       // if(arr[i][j] > largestNum[i]) {
+//       //   largestNum[i] = arr[i][j]
+//       // }
+//       arr[i][j] > largestNum[i] ? largestNum[i] = arr[i][j] : "error"
+//     }
+//   }
+//   return largestNum
+// }
+
+//   console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
 
 //   function largestOfFour(arr) {
 //     var results = [];
@@ -34,64 +72,60 @@
 //           largestNumber = arr[n][sb];
 //         }
 //       }
-
 //       results[n] = largestNumber;
 //     }
-
 //     return results;
 //   }
 
-//   function confirmEnding(str, target) {
-//     // "Never give up and good luck will find you."
-//     // -- Falcor
-//     // loop the first argument and return the last letter
-//     // compare the last letter to the second argument
-//     var lastLetter;
-//     for (var i=0;i <str.length; i++) {
-//         var currentLetter = str[i]
-//       if (currentLetter.indexOf() == str.length -1) {
-//         lastLetter = currentLetter
+// ************************************************************************************************************************************************
+// //  find the last letter in a string and check if it is equal to second parameter (target)
+// ************************************************************************************************************************************************
 
-//       }
-//     }
-
-//     console.log(lastLetter)
-//     return str;
-
-//   }
-
-//  find the last letter in a string and check if it is equal to second parameter (target)
-
-//   function confirmEnding(str, target) {
-//       var lastLetter
-//     // "Never give up and good luck will find you."
-//     // -- Falcor
-//     // loop the first argument and return the last letter
-//     // compare the last letter to the second argument
-//     for (var i=0;i <str.length; i++) {
-//         if (str.indexOf(str[i]) == str.length -1) {
-//             lastLetter = str[i]
-//         }
-//     }
-//     if (lastLetter == target) {
-//         return true
-//     }
-//     console.log(lastLetter)
-//     return str;
-
-//   }
-
-//   confirmEnding("Bastian", "n");
-
-// //   Check if a string (first argument, str) ends with the given target string (second argument, target).
 // function confirmEnding(str, target) {
-//     // "Never give up and good luck will find you."
-//     // -- Falcor
-//     console.log(target.length)
+//   var lastLetter;
+//   // loop the first argument and return the last letter
+//   // compare the last letter to the second argument
+//   for (var i = 0; i < str.length; i++) {
+//     if (str.indexOf(str[i]) == str.length - 1) {
+//       lastLetter = str[i]
+//     }
+//   }
+//   if (lastLetter == target) {
+//     return true
+//   }
+//   console.log(lastLetter)
+//   return str;
+// }
+
+// es 6
+// const confirmEnding = (str, target) => {
+//   var lastLetter;
+//   // loop the first argument and return the last letter
+//   // compare the last letter to the second argument
+//   for (var i = 0; i < str.length; i++) {
+//     if (str.indexOf(str[i]) == str.length - 1) {
+//       lastLetter = str[i]
+//     }
+//   }
+//   if (lastLetter == target) {
+//     return true
+//   }
+//   console.log(lastLetter)
+//   return str;
+// }
+
+// console.log(confirmEnding("Bastian", "n"));
+
+// ************************************************************************************************************************************************
+// //   Check if a string (first argument, str) ends with the given target string (second argument, target).
+// ************************************************************************************************************************************************
+
+// function confirmEnding(str, target) {
+//     // console.log(target.length)
 //     var targetLength = target.length
-//     console.log(targetLength)
+//     // console.log(targetLength)
 //     var str2 = str.slice(-targetLength)
-//     console.log(str2)
+//     // console.log(str2)
 //     if (str2 == target){
 //         return true
 //     } else {
@@ -100,9 +134,26 @@
 //     return str;
 //   }
 
-//   confirmEnding("Bastian", "n");
+// es 6
+// const confirmEnding = (str, target) => {
+//     var targetLength = target.length
+//     var str2 = str.slice(-targetLength)
+//     console.log("str2 = " + str2)
+//     // if (str2 == target){
+//     //     return true 
+//     // } else {
+//     //     return false
+//     // }
+//     str = str2 == target ? true: false
+//     return str;
+// }
 
+// console.log(confirmEnding("Bastian", "n"));
+// confirmEnding("Bastian", "n")
+
+// ************************************************************************************************************************************
 // Repeat a given string str (first argument) for num times (second argument). Return an empty string if num is not a positive number.
+// ************************************************************************************************************************************************
 
 // function repeatStringNumTimes(str, num) {
 //     // repeat after me
@@ -118,30 +169,63 @@
 //     return str;
 //   }
 
-//   repeatStringNumTimes("abc", 3);
+// es 6
+// const repeatStringNumTimes = (str, num) => {
+//   var stringArr = []
+//   if (num) {
+//     for (var i = 0; i < num; i++) {
+//       stringArr.push(str)
+//     }
+//     console.log(stringArr)
+//     str = stringArr.join('')
+//   }
+//   console.log(str)
+//   return str;
+// }
 
+// repeatStringNumTimes("abc", 3);
+
+// ************************************************************************************************************************************************
 //   Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ... ending.
+// ************************************************************************************************************************************************
 
 // function truncateString(str, num) {
-//     // Clear out that junk in your trunk
 //     //  slice the string at index 0 to the num point
 //     // log the new string and concatenate ... on the end
 //     var newStr = str.slice(0,num)
 //      newStr = newStr + "..."
-//   console.log(newStr)
-
+//     console.log(newStr)
 //     return str;
 //   }
 
-//   truncateString("A-", 1);
+// es 6
+// const truncateString = (str, num) => {
+//   var newStr = str.slice(0,num)
+//   newStr = newStr + "..."
+//  console.log(newStr)
+//  return str;
+// }
+
+// truncateString("A Storm of Swords", 8);
+
+// ************************************************************************************************************************************************
+// return the sum of all the numbers in an array
+// ************************************************************************************************************************************************
 
 // function simpleArraySum(ar) {
-//   /*
-//    * Write your code here.
-//    */var sum = 0;
+//   var sum = 0;
 //   for (var i = 0; i < ar.length; i++) {
+//     sum = sum += ar[i]
+//   }
+//   console.log(sum)
+//   return sum
+// }
 
-//       sum = sum += ar[i]
+// es 6
+// const simpleArraySum = ar => {
+//   var sum = 0;
+//   for (var i = 0; i < ar.length; i++) {
+//     sum = sum += ar[i]
 //   }
 //   console.log(sum)
 //   return sum
@@ -149,30 +233,29 @@
 
 // simpleArraySum([1,3,4,5,6])
 
+// ************************************************************************************************************************************************
 //  compare the triplets and add 1 to each corresponding score if greater thatn its counterpart
+// ************************************************************************************************************************************************
 
 // function compareTriplets(a, b) {
-//     let scores = [0,0]
+//   let scores = [0, 0]
 
-//     for (let i = 0; i < a.length; i++) {
-//         console.log("a value: " + a[i])
-//         console.log("b value " + b[i])
-//         if (a[i] > b[i]) {
-//             scores[0]++
-
-//         }
-//         else if (b[i] > a[i]) {
-//             scores[1]++
-//         }
-//         else {
-//             console.log("error")
-//         }
+//   for (let i = 0; i < a.length; i++) {
+//     console.log("a value: " + a[i])
+//     console.log("b value " + b[i])
+//     if (a[i] > b[i]) {
+//       scores[0]++
 //     }
-//     console.log(scores);
-//     return scores;
-
+//     else if (b[i] > a[i]) {
+//       scores[1]++
+//     }
+//     else {
+//       console.log("error")
+//     }
+//   }
+//   console.log(scores);
+//   return scores;
 // }
-
 
 // compareTriplets([1, 5, 3], [2, 4, 6,]);
 
@@ -199,25 +282,23 @@
 //         if (!secondArray[index]) {
 //             scores[1]++
 //         }
-
 //         if (item > secondArray[index]) {
 //             scores[0]++
 //         }
-
 //         if (secondArray[index] > item) {
 //             scores[1]++
 //         }
 //     })
-
 //     console.log(scores);
 //     return scores
 // };
 
-
 // compareTriplets([5 ,6, 7], [3, 6, 10]);
 
+// ************************************************************************************************************************************************
 // Create a function that looks through an array (first argument) and returns the first element in the array that passes a 
 // truth test (second argument). If no element passes the test, return undefined.
+// ************************************************************************************************************************************************
 
 // function findElement(arr, func) {
 //     let num = 0;
@@ -225,33 +306,52 @@
 //     for (var i = 0; i < arr.length; i++) {
 //         // run each iteration through the function argument 
 //         // if function returns true log the number
-//         if (func(arr[i])) {
-//             num = arr[i];
-//             console.log(num)
-//             return num;
-//         }
+//         // if (func(arr[i])) {
+//         //     num = arr[i];
+//         //     // console.log(num)
+//         //     // return num;
+//         // }
+//         func(arr[i]) ? num = arr[i] : "error"
 //     }
+//     return num;
 // }
 
-//   findElement([1, 2, 3, 4], num => num % 2 === 0);
-// findElement([1, 3, 5, 8, 9, 10], function (num) { return num % 2 === 0; })
+// function findElement(arr, func) {
+//   let num = 0;
+//   // loop thru array
+//   for (var i = 0; i < arr.length; i++) {
+//     // run each iteration through the function argument 
+//     // if function returns true log the number
+//     func(arr[i]) ? num = arr[i] : "error"
+//   }
+//   console.log(num);
+//   return num;
+// }
 
-// calculate and pring the sum of all large integers
-// var ar = [1000000001, 1000000002, 1000000003, 1000000004, 1000000005]
+// // findElement([1, 2, 3, 4], num => num % 2 === 0);
+// // console.log(findElement([1, 2, 3, 4], num => num % 2 === 0))
+// // findElement([1, 3, 5, 8, 9, 10], function (num) { return num % 2 === 0; })
+// findElement([1,3,5,7,9], num => (num - 2) === 3);
+
+// ************************************************************************************************************************************************
+// calculate and return the sum of all large integers
+// ************************************************************************************************************************************************
 
 // function aVeryBigSum(ar) {
-//     var sum = 0
-//     for (var i = 0; i < ar.length; i++) {
-//         sum += ar[i]
-//     }
-//     console.log(sum);
-//     return sum;
 
+//   var sum = 0
+//   for (var i = 0; i < ar.length; i++) {
+//     sum += ar[i]
+//   }
+//   console.log(sum);
+//   return sum;
 // }
 
-// aVeryBigSum(ar)
+// aVeryBigSum([1000000001, 1000000002, 1000000003, 1000000004, 1000000005])
 
+// ************************************************************************************************************************************************
 // write a javascript function to reverse a number
+// ************************************************************************************************************************************************
 
 // var num = 3456;
 // var newNumArray = []
@@ -262,12 +362,12 @@
 //     num = num.toString();
 //     // console.log(num[0])
 //     num = num.split("")
-//     // console.log(num)
+//     console.log(num)
 //     // console.log("num.length = " + num.length)
 //     // loop thru the number backwards
 //     // add numbers to an array starting with the last number in num
 //     // console.log(num.length -1)
-//     for (var i = num.length -1; i < num.length; i--) {
+//     for (var i = num.length -1; i > -1; i--) {
 //         // console.log("num[i] = " + num[i])
 //         var currentNum = num[i];
 //         newNumArray.push(currentNum)
@@ -278,10 +378,9 @@
 
 // reverseNumber(3456)
 
-
+// ************************************************************************************************************************************************
 // Given a square matrix, calculate the absolute difference between the sums of its diagonals.
-
-
+// ************************************************************************************************************************************************
 
 // function diagonalDifference(arr) {
 //     console.log(arr[0][0])
@@ -293,7 +392,6 @@
 //     console.log("val2: " + value2)
 //     console.log("absolute val: " + Math.abs(value1 - value2))
 //     return Math.abs(value1 - value2)
-
 // }
 
 // diagonalDifference([[11,2,4],[4,5,6],[10,8,-12]])
@@ -335,67 +433,428 @@
 
 // diagonalDifference(3, [11,2,4,4,5,6,10,8,-12])
 
-function diagonalDifference(arr) {
-  // split the array into {num} arrays of equal length
-  var length = arr.length
-  // console.log(length)
-  var sqrt = Math.sqrt(length)
-  // console.log(sqrt)
-  // var array = arr.length % sqrt;
-  // console.log(array)
-  var res = [];
-  function split(arr, n) {
-    while (arr.length) {
-      res.push(arr.splice(0, n));
-    }
-    return res;
-  }
-  split(arr, sqrt)
-  console.log(res)
-  // write another function that calculates the diagonal difference dependent on number of rows
-  // find first and second values of diagonal
-  // get the abs difference from the two
-  // function dD(array, rows) {
-  //   var val1Total;
-  //   var val2Total;
-  //   var val1 = array[rows -rows][rows -rows];
-  //   var val2 = array[rows - (rows -1)][rows - (rows -1)]
-  //   var val3 = array[rows - (rows -2)][rows - (rows -2)]
-  //   console.log("val1 = " + val1);
-  //   console.log("val2 = " + val2)
-  //   console.log("val3 = " + val3)
+// function diagonalDifference(arr) {
+//   // split the array into {num} arrays of equal length
+//   var length = arr.length
+//   // console.log(length)
+//   var sqrt = Math.sqrt(length)
+//   // console.log(sqrt)
+//   // var array = arr.length % sqrt;
+//   // console.log(array)
+//   var res = [];
+//   function split(arr, n) {
+//     while (arr.length) {
+//       res.push(arr.splice(0, n));
+//     }
+//     return res;
+//   }
+//   split(arr, sqrt)
+//   console.log(res)
+// // write another function that calculates the diagonal difference dependent on number of rows
+// // find first and second values of diagonal
+// // get the abs difference from the two
+// function dD(array, rows) {
+//   var val1Total;
+//   var val2Total;
+//   var val1 = array[rows -rows][rows -rows];
+//   var val2 = array[rows - (rows -1)][rows - (rows -1)]
+//   var val3 = array[rows - (rows -2)][rows - (rows -2)]
+//   console.log("val1 = " + val1);
+//   console.log("val2 = " + val2)
+//   console.log("val3 = " + val3)
 
+//   for (var i = 0; i < array.length; i++) {
+//     var yurp = array[i]
+//     console.log(yurp)
+//     var value1;
+//   }
+// //  console.log(yurp) 
+// }
 
-  //   for (var i = 0; i < array.length; i++) {
-  //     var yurp = array[i]
-  //     console.log(yurp)
-  //     var value1;
-  //   }
-  // //  console.log(yurp) 
-  // }
+//   function dD(num, arr) {
+//     // split the array into {num} arrays of equal length
 
-  function dD(num, arr) {
-    // split the array into {num} arrays of equal length
+//     var arr1 = arr.slice(0, num);
+//     console.log("arr1 = " + arr1);
+//     var arr2 = arr.slice(num, num * 2);
+//     console.log("arr2 = " + arr2)
+//     var arr3 = arr.slice(num * 2, num * 3);
+//     console.log("arr3 = " + arr3)
+//     var value1 = arr1[0] + arr2[1] + arr3[2];
+//     console.log("value 1 = " + value1)
+//     var value2 = arr1[2] + arr2[1] + arr3[0];
+//     console.log("value 2 = " + value2)
+//     console.log("absolute val: " + Math.abs(value1 - value2))
+//     return Math.abs(value1 - value2)
+// }
 
-    var arr1 = arr.slice(0, num);
-    console.log("arr1 = " + arr1);
-    var arr2 = arr.slice(num, num * 2);
-    console.log("arr2 = " + arr2)
-    var arr3 = arr.slice(num * 2, num * 3);
-    console.log("arr3 = " + arr3)
-    var value1 = arr1[0] + arr2[1] + arr3[2];
-    console.log("value 1 = " + value1)
-    var value2 = arr1[2] + arr2[1] + arr3[0];
-    console.log("value 2 = " + value2)
-    console.log("absolute val: " + Math.abs(value1 - value2))
-    return Math.abs(value1 - value2)
-}
-
-
-  dD(sqrt, arr)
-
-}
+//   dD(sqrt, arr)
+// }
 
 // diagonalDifference([11, 2, 4, 4, 5, 6, 10, 8, -12])
-diagonalDifference([-1,1,-7,-8,-10,-8,-5,-2,0,9,7,-1,4,4,-2,1])
+// diagonalDifference([-1,1,-7,-8,-10,-8,-5,-2,0,9,7,-1,4,4,-2,1])
+
+// ************************************************************************************************************************************************
+// return the longest word in a sentence
+// ************************************************************************************************************************************************
+
+// function LongestWord(sen) { 
+//   // code goes here
+//   sen = sen.replace(/[^a-zA-Z ]/g, "");
+//   var biggest = 0;
+//   var longest;
+//   var senArr = sen.split(" ");
+//   console.log(senArr)
+//   // loo thru senArr are compare each. store the biggest in a var
+//   for (var i = 0; i < senArr.length; i++) {
+//     var currentWord = senArr[i]
+//     // console.log(currentWord)
+//     if (currentWord.length > biggest) {
+//       biggest = currentWord.length
+//       longest = currentWord
+//     }
+//     console.log("longest = " + longest)
+//   }
+//   console.log(longest)
+//   return longest; 
+// }
+
+// LongestWord("a beautiful sentence^&!");
+
+
+// function factorialize(num) {
+//   var result = num;
+//   if (num === 0 || num === 1) 
+//     return 1; 
+//   while (num > 1) { 
+//     num--;
+//     result *= num;
+//   }
+//   return result;
+// }
+
+// log(factorialize(5));
+
+// function factorialize(num) {
+//   if (num === 0 || num === 1)
+//     return 1;
+//   for (var i = num - 1; i >= 1; i--) {
+//     num *= i;
+//   }
+//   return num;
+// }
+// factorialize(5);
+
+// ************************************************RECURSION FUNCTIONS******************************************************************
+
+// DETERMINE FACTORIAL USING RECURSION
+
+// function factorial(x) {
+//   if (x < 0) return;
+//   if (x === 0) return 1;
+//   return x * factorial(x - 1);
+// }
+
+// console.log(factorial(3));
+
+// REVERSE A STRING USING RECURSION
+
+// function revStr(str){
+//   if (str === '') return '';
+//   return revStr(str.substr(1)) + str[0];
+// }
+// revStr('cat');
+// // tac
+
+//  ADDING NUM -1 STARTING FROM NUM AND GOING TO 0
+
+// function SimpleAdding(num) { 
+//   if (num === 1) {
+//     return 1;
+//   }
+//   else {
+//     return num + SimpleAdding(num -1);
+//   }
+// }
+
+// **************************************************************************************************************************************************************
+
+// function SimpleAdding(num) { 
+
+//   // code goes here  
+//   var answer = 0;
+
+//   // loop from 1 to num
+//   for (var i = 1; i <= num; i++) {
+//     console.log("i = " + i)
+//     console.log("answer = " + answer)
+//     console.log("**************")
+//     answer += i;
+//   } 
+//   console.log(answer)
+//   return answer;
+
+// }
+
+// SimpleAdding(7)
+
+
+// function LetterCapitalize(str) { 
+
+//   // code goes here  
+//   // split the string into an array of single words
+//   // loop thru new array
+//   // capitalize the letters at index[0] of each word
+//   // join the array back to a string
+//   str = str.split(" ")
+//   for (var i = 0; i < str.length; i ++) {
+//     // console.log(str[i])
+//     var currentWord = str[i];
+//     // currentWord = currentWord[0].toUpperCase()
+//     var currentLetter = currentWord[0]
+//     // currentWord = currentWord.split('');
+//     // currentWord = currentWord.splice(0, 1, currentLetter.toUpperCase())
+//     console.log("currentWord = " + currentWord)
+//     console.log("currentLetter = " + currentLetter)
+//   }
+
+//   // console.log(str)
+//   return str; 
+
+// }
+
+// LetterCapitalize("check me out bruh")
+
+// function LetterCapitalize(str) {
+//   var newArr = [];
+//   // code goes here  
+//   // split the string into an array of single words
+//   // capitalize each first letter
+//   // push new word with capital first letter to holder array
+//   // loop thru new array
+//   // capitalize the letters at index[0] of each word
+//   // join the array back to a string
+//   str = str.split(" ")
+//   for (var i = 0; i < str.length; i++) {
+//     // console.log(str[i])
+//     var currentWord = str[i];
+//     // console.log("currentWord = " + currentWord)
+//     var currentLetter = currentWord[0];
+//     // console.log("currentLetter = " + currentLetter)
+//     // console.log("******************")
+//     var wordArr = currentWord.split('')
+//     console.log("wordArr = " + wordArr)
+//     var capLetter = wordArr[0].toUpperCase();
+//     wordArr.splice(0, 1, capLetter)
+//     var newWord = wordArr.join("")
+//     // console.log("capLetter = " + capLetter)
+//     // console.log("WordArr = " + wordArr)
+//     // console.log("newWord = " + newWord)
+//     // console.log("**************")
+//     newArr.push(newWord)
+//     // console.log("newArr = " + newArr)
+//   }
+//   newArr = newArr.join(" ");
+//   console.log("newArr = " + newArr);
+//   str = newArr;
+//   // console.log(str)
+//   return str;
+// }
+
+// LetterCapitalize("check me out bruh")
+
+
+// function upperCaseFirstLetter(string) {
+//   return string.charAt(0).toUpperCase() + string.slice(1);
+// }
+
+// console.log(upperCaseFirstLetter("churp my yurp nurp"))
+
+
+// function lowerCaseAllButFirst(str) {
+//   // split the string into an array of words
+//   var newWordString = [];
+//   str = str.split(' ')
+//   console.log(str)
+//   // loop thru the array of words
+//   for (var i = 0; i < str.length; i++) {
+//     var word = str[i]
+//     console.log(word)
+//     var wordArr = [];
+//     // var word = "CHuRp";
+//     var firstLetter = word.slice(0, 1);
+//     wordArr.push(firstLetter);
+//     console.log("firstLetter = " + firstLetter)
+//     word = word.slice(1, word.lenth);
+//     console.log("word = " + word);
+//     word = word.toLowerCase()
+//     console.log("Lowercase word = " + word)
+//     wordArr.push(word)
+//     console.log("wordArr =" + wordArr)
+//     var newWord = wordArr.join('')
+//     console.log("newWord = " + newWord)
+//     newWordString.push(newWord)
+//   }
+//   newWordString = newWordString.join(' ');
+//   console.log("newWordString = " + newWordString)
+//   // slice off character at index[0] and store it
+//   // lower case the remaing part of each word
+//   // join them back together for the new str
+// }
+
+// lowerCaseAllButFirst("MY HeARt HUrts ")
+
+// var wordArr = [];
+// var word = "CHuRp";
+// var firstLetter = word.slice(0, 1);
+// wordArr.push(firstLetter);
+// console.log("firstLetter = " + firstLetter)
+// word = word.slice(1, word.lenth);
+// console.log("word = " + word);
+// word = word.toLowerCase()
+// console.log("Lowercase word = " + word)
+// wordArr.push(word)
+// console.log("wordArr =" + wordArr)
+// var newWord = wordArr.join('')
+// console.log("newWord = " + newWord)
+
+// function LetterCapitalize(str) {
+//   var newArr = [];
+
+//   str = str.split(" ")
+//   for (var i = 0; i < str.length; i++) {
+//     // console.log(str[i])
+//     var currentWord = str[i];
+//     // console.log("currentWord = " + currentWord)
+//     var currentLetter = currentWord[0];
+//     // console.log("currentLetter = " + currentLetter)
+//     // console.log("******************")
+//     var wordArr = currentWord.split('')
+//     console.log("wordArr = " + wordArr)
+//     var capLetter = wordArr[0].toUpperCase();
+//     wordArr.splice(0, 1, capLetter)
+//     var newWord = wordArr.join("")
+//     // console.log("capLetter = " + capLetter)
+//     // console.log("WordArr = " + wordArr)
+//     // console.log("newWord = " + newWord)
+//     // console.log("**************")
+//     newArr.push(newWord)
+//     // console.log("newArr = " + newArr)
+//   }
+//   newArr = newArr.join(" ");
+//   console.log("newArr = " + newArr);
+//   str = newArr;
+//   // console.log(str)
+//   var newWordString = [];
+//   str = str.split(' ')
+//   console.log(str)
+//   // loop thru the array of words
+//   for (var i = 0; i < str.length; i++) {
+//     var word = str[i]
+//     console.log(word)
+//     var wordArr = [];
+//     // var word = "CHuRp";
+//     var firstLetter = word.slice(0, 1);
+//     wordArr.push(firstLetter);
+//     console.log("firstLetter = " + firstLetter)
+//     word = word.slice(1, word.lenth);
+//     console.log("word = " + word);
+//     word = word.toLowerCase()
+//     console.log("Lowercase word = " + word)
+//     wordArr.push(word)
+//     console.log("wordArr =" + wordArr)
+//     var newWord = wordArr.join('')
+//     console.log("newWord = " + newWord)
+//     newWordString.push(newWord)
+//   }
+//   newWordString = newWordString.join(' ');
+//   console.log("newWordString = " + newWordString)
+//   // slice off character at index[0] and store it
+//   // lower case the remaing part of each word
+//   // join them back together for the new str
+//   return str;
+// }
+
+// LetterCapitalize("chEck mE ouT brUh")
+
+// ************************************************************************************************************************************************
+// You are given two arrays and an index. Use the array methods slice and splice to copy each element of the first array into the second array, in order. 
+// Begin inserting elements at index n of the second array. Return the resulting array. The input arrays should remain the same after the function runs.
+// ************************************************************************************************************************************************
+
+// function frankenSplice(arr1, arr2, n) {
+//   // It's alive. It's alive!
+//   // splice arr 2 at given at "n" index
+//   let newArr2 = arr2.slice(n)
+//   console.log("newArr2: " + newArr2)
+//   // let newArr = 
+//   // console.log("newArr: " + newArr)
+//   let anotherArr2 = arr2.splice(n, 0, arr1)
+//   console.log("anotherArr2: " + anotherArr2)
+//   console.log("arr2 after splice: " + arr2)
+//   console.log("arr1: " + arr1)
+
+//   return arr2;
+// }
+
+// // frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2);
+// frankenSplice([1, 2], ["a", "b"], 1)
+
+// function frankenSplice(arr1, arr2, n) {
+//   // It's alive. It's alive!
+//   let localArray = arr2.slice();
+//   for (let i = 0; i < arr1.length; i++) {
+//     localArray.splice(n, 0, arr1[i]);
+//     n++;
+//   }
+//   return localArray;
+// }
+
+// ****************************************
+// Remove all falsy values from an array.
+// ****************************************
+
+// function bouncer(arr) {
+//   // Don't show a false ID to this bouncer.
+//   // convert all items in the array to booleans
+//   // if boolean value === true push to newArr
+//   let newArr = [];
+
+//   arr.forEach(function(item){
+//     if (item) {
+//       newArr.push(item)
+//     }
+//   })
+  
+//   console.log(newArr)
+//   return newArr;
+// }
+
+// bouncer([7, "ate", "", false, 9]);
+
+// ************************************************************************************************************************************************
+// Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. The returned value should be a number.
+// ************************************************************************************************************************************************
+
+// function getIndexToIns(arr, num) {
+//     var newArr = arr.filter()
+//   }
+  
+//   getIndexToIns([40, 60], 50);
+
+// var points = [40, 100, 1, 5, 25, 10];
+// points.sort(function(a, b){return a-b});
+// log(points)
+
+var ages = [32, 33, 16, 40];
+
+function checkAdult(age) {
+  return age >= 18;
+}
+
+var oldPeople = ages.filter(checkAdult)
+log(oldPeople)
+
+var newArr = ages.filter(item => item < 33)
+log(`newArr = ${newArr}`)
 
