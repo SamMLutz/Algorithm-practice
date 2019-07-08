@@ -846,15 +846,13 @@ const log = console.log
 // points.sort(function(a, b){return a-b});
 // log(points)
 
-var ages = [32, 33, 16, 40];
 
-function checkAdult(age) {
-  return age >= 18;
+
+// *************************************************************************************************************************************************************
+// Given an array of integers, calculate the fractions of its elements that are positive, negative, and are zeros. Print the decimal value of each fraction on a new line.
+// *************************************************************************************************************************************************************
+
+function plusMinus(arr) {
+
+
 }
-
-var oldPeople = ages.filter(checkAdult)
-log(oldPeople)
-
-var newArr = ages.filter(item => item < 33)
-log(`newArr = ${newArr}`)
-
