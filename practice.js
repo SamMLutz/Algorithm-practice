@@ -1,4 +1,3 @@
-const log = console.log
 // ************************************************************************************************************************************************
 // take a string input and convert all the letters to lowercase
 // ************************************************************************************************************************************************
@@ -825,7 +824,7 @@ const log = console.log
 //       newArr.push(item)
 //     }
 //   })
-  
+
 //   console.log(newArr)
 //   return newArr;
 // }
@@ -839,7 +838,7 @@ const log = console.log
 // function getIndexToIns(arr, num) {
 //     var newArr = arr.filter()
 //   }
-  
+
 //   getIndexToIns([40, 60], 50);
 
 // var points = [40, 100, 1, 5, 25, 10];
@@ -852,7 +851,78 @@ const log = console.log
 // Given an array of integers, calculate the fractions of its elements that are positive, negative, and are zeros. Print the decimal value of each fraction on a new line.
 // *************************************************************************************************************************************************************
 
-function plusMinus(arr) {
+// function plusMinus(arr) {
+//   // create variables to store num of positive/neg and zero from the array
+//   let pos = 0;
+//   let neg = 0;
+//   let zero = 0;
+//   // loop through the array and add 1 to each respective value for each in the array
+//   arr.forEach(function (item) {
+//     if (item === 0) {
+//       zero++
+//     }
+//     else if (item > 0) {
+//       pos++
+//     }
+//     else if (item < 0) {
+//       neg++
+//     }
+//     else {
+//       console.log("error");
+//     }
+//   })
+
+// console.log(`pos: ${pos}`);
+// console.log(`neg: ${neg}`);
+// console.log(`zero: ${zero}`);
+
+// // make variables to store a decimal representing of the fraction of each previous variables compared to size of the array
+// let posFrac = pos / arr.length
+// console.log(`posFrac = ${posFrac}`);
+
+// let negFrac = neg / arr.length
+// console.log(`negFrac = ${negFrac}`);
+
+// let zeroFrac = zero / arr.length
+// console.log(`zeroFrac = ${zeroFrac}`);
+
+// }
+
+// plusMinus([-4, 3, -9, 0, 4, 1])
 
 
+// *************************************************************************************************************************************************************
+// Given five positive integers, find the minimum and maximum values that can be calculated by summing exactly four of the five integers. Then print the respective minimum and 
+// maximum values as a single line of two space-separated long integers.
+// *************************************************************************************************************************************************************
+
+function miniMaxSum(arr) {
+  // create placeholder variables for minsum and maxsum
+  let minSum = 0;
+  let maxSum = 0;
+  
+  // sort the array in ascending order
+  arr.sort(function(a, b){return a-b});
+  console.log(`arr = ${arr}`);
+  
+  // calculate minSum value by slicing off our smallest number then adding the remaining items in the array together
+  let maxSumArray = arr.slice(1, arr.length)
+  // console.log(`arr: ${arr}`);
+  console.log("maxSumArray: " + maxSumArray);
+  maxSumArray.forEach(function(item){
+    maxSum += item
+  })
+  
+  console.log(maxSum);
+
+  // calculate the maxSum value by slicing off our biggest number in the array
+  let minSumArray = arr.slice(0 ,arr.length -1)
+  console.log(`minSumArray: ${minSumArray}`);
+  minSumArray.forEach(function(item){
+    minSum += item
+  })
+  
+  console.log(minSum);
 }
+
+miniMaxSum([1, 5, 3, 7, 2])
