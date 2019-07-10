@@ -62,19 +62,19 @@
 
 //   console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
 
-//   function largestOfFour(arr) {
-//     var results = [];
-//     for (var n = 0; n < arr.length; n++) {
-//       var largestNumber = arr[n][0];
-//       for (var sb = 1; sb < arr[n].length; sb++) {
-//         if (arr[n][sb] > largestNumber) {
-//           largestNumber = arr[n][sb];
-//         }
+// function largestOfFour(arr) {
+//   var results = [];
+//   for (var n = 0; n < arr.length; n++) {
+//     var largestNumber = arr[n][0];
+//     for (var sb = 1; sb < arr[n].length; sb++) {
+//       if (arr[n][sb] > largestNumber) {
+//         largestNumber = arr[n][sb];
 //       }
-//       results[n] = largestNumber;
 //     }
-//     return results;
+//     results[n] = largestNumber;
 //   }
+//   return results;
+// }
 
 // ************************************************************************************************************************************************
 // //  find the last letter in a string and check if it is equal to second parameter (target)
@@ -96,7 +96,7 @@
 //   return str;
 // }
 
-// es 6
+// // es 6
 // const confirmEnding = (str, target) => {
 //   var lastLetter;
 //   // loop the first argument and return the last letter
@@ -520,6 +520,9 @@
 
 // LongestWord("a beautiful sentence^&!");
 
+// *************************************************************************************************************************************************************
+// factorialize a a given number
+// *************************************************************************************************************************************************************
 
 // function factorialize(num) {
 //   var result = num;
@@ -529,6 +532,8 @@
 //     num--;
 //     result *= num;
 //   }
+//   console.log(result);
+
 //   return result;
 // }
 
@@ -542,6 +547,7 @@
 //   }
 //   return num;
 // }
+
 // factorialize(5);
 
 // ************************************************RECURSION FUNCTIONS******************************************************************
@@ -896,33 +902,242 @@
 // maximum values as a single line of two space-separated long integers.
 // *************************************************************************************************************************************************************
 
-function miniMaxSum(arr) {
-  // create placeholder variables for minsum and maxsum
-  let minSum = 0;
-  let maxSum = 0;
-  
-  // sort the array in ascending order
-  arr.sort(function(a, b){return a-b});
-  console.log(`arr = ${arr}`);
-  
-  // calculate minSum value by slicing off our smallest number then adding the remaining items in the array together
-  let maxSumArray = arr.slice(1, arr.length)
-  // console.log(`arr: ${arr}`);
-  console.log("maxSumArray: " + maxSumArray);
-  maxSumArray.forEach(function(item){
-    maxSum += item
-  })
-  
-  console.log(maxSum);
+// function miniMaxSum(arr) {
+//   // create placeholder variables for minsum and maxsum
+//   let minSum = 0;
+//   let maxSum = 0;
 
-  // calculate the maxSum value by slicing off our biggest number in the array
-  let minSumArray = arr.slice(0 ,arr.length -1)
-  console.log(`minSumArray: ${minSumArray}`);
-  minSumArray.forEach(function(item){
-    minSum += item
+//   // sort the array in ascending order
+//   arr.sort(function(a, b){return a-b});
+//   console.log(`arr = ${arr}`);
+
+//   // calculate minSum value by slicing off our smallest number then adding the remaining items in the array together
+//   let maxSumArray = arr.slice(1, arr.length)
+//   // console.log(`arr: ${arr}`);
+//   console.log("maxSumArray: " + maxSumArray);
+//   maxSumArray.forEach(function(item){
+//     maxSum += item
+//   })
+
+//   console.log(maxSum);
+
+//   // calculate the maxSum value by slicing off our biggest number in the array
+//   let minSumArray = arr.slice(0 ,arr.length -1)
+//   console.log(`minSumArray: ${minSumArray}`);
+//   minSumArray.forEach(function(item){
+//     minSum += item
+//   })
+
+//   console.log(minSum);
+// }
+
+// miniMaxSum([1, 5, 3, 7, 2])
+
+
+// *************************************************************************************************************************************************************
+// You are in charge of the cake for your niece's birthday and have decided the cake will have one candle for each year of her total age. When she blows out the candles, 
+// she’ll only be able to blow out the tallest ones. Your task is to find out how many candles she can successfully blow out.
+// *************************************************************************************************************************************************************
+
+// psuedocode
+// candles = [3,2,1,3]
+// tallestCandle = 0;
+// tallestCandleArr = []
+// age = input 
+
+// loop over candles Array 
+
+// if (currentItem > tallestCandle) {
+//   currentItem = tallestCandle
+// }
+// end if 
+
+// push tallestCandle to tallestCandleArr
+
+// loop over array again 
+
+// if (currentItem === tallestCandle) {
+//   push currentItem into tallestCandleArr
+// }
+// end if 
+
+// return tallestCandleArr
+
+// birthdayCakeCandles = arr => {
+//   let tallestCandle = 0;
+//   let tallestCandleArr = [];
+
+//   arr.forEach(item => {
+//     if (item > tallestCandle) {
+//       tallestCandle = item
+//     }
+//   })
+//   // console.log(tallestCandle);
+//   // console.log(`arr = ${arr}`);
+//   arr.forEach(item => {
+//     if (item === tallestCandle) {
+//       tallestCandleArr.push(item)
+//     }
+//   })
+//   // console.log(tallestCandleArr);
+//   let numCandles = tallestCandleArr.length
+//   // console.log(numCandles);
+//   return numCandles
+// }
+
+// birthdayCakeCandles([3, 2, 1, 3])
+
+// *************************************************************************************************************************************************************
+// rounding grades up
+// *************************************************************************************************************************************************************
+
+// psuedocode
+
+// grades = gradeArr
+// grade = index of gradeArr
+// gradesToBeRounded = []
+// roundedGrades = []
+
+// loop thru grades
+
+// if (grade > 40) {
+//   push grade to gradesToBeRounded
+// }
+// end if
+
+// loop over gradesToBeRounded
+
+// run rounding function for each item
+
+// return new array of rounded grades
+
+
+// function gradingStudents(grades) {
+//   let gradesToBeRounded = [];
+//   let roundedGrades = [];
+//   let failingGrades = []
+//   function round5(x)
+// {
+//     return Math.ceil(x/5)*5;
+// }
+
+//   grades.forEach(item => {
+//     if (item > 40) {
+//       gradesToBeRounded.push(item)
+//     }
+//     else {
+//       failingGrades.push(item)
+//     }
+//   })
+//   console.log(`gradesToBeRounded: ${gradesToBeRounded}`);
+
+//   roundedGrades = gradesToBeRounded.map(round5)
+
+//   roundedGrades.push(failingGrades)
+//   console.log(`roundedGrades: ${roundedGrades}`);
+// }
+
+// gradingStudents([33,38,67,73])
+
+
+
+// *************************************************************************************************************************************************************
+// Sam's house has an apple tree and an orange tree that yield an abundance of fruit. In the diagram below, the red region denotes his house, where s is the start point, 
+// and t is the endpoint. The apple tree is to the left of his house, and the orange tree is to its right. 
+// You can assume the trees are located on a single point, where the apple tree is at point A, and the orange tree is at point B.
+// *************************************************************************************************************************************************************
+
+// psudocode
+  // parameters
+    // houseStartingPoint = 7
+    // houseEndingPoint = 10
+    // appleTree = 4
+    // orangeTree = 12
+    // appleDistance = [2,3,-4]
+    // orangeDistance = [3,-2,-4]
+
+  // functions
+    function range(start, end) {
+      var ans = [];
+      for (let i = start; i <= end; i++) {
+        ans.push(i);
+      }
+      // console.log(ans);
+      return ans;
+    }
+
+  // variables
+    // samsHouseRange = [7,8,9,10]
+    // apples = 3
+    // oranges = 3
+    // orangesLand = []
+    // applesLand = []
+    // houseLandedApples = []
+    // houseLandedOranges = []
+
+// calculate samshouse range
+// samsHouseRange = [7,8,9,10]
+
+// calculate where applesLand and where orangesLand
+// add tree locations to each respesctive  integer in the distance arrays
+
+// loop appleDistance 
+//   for each item add appleTree
+//   push item to applesLand
+
+// loop orangeDistance 
+//   for each item add orangeTree
+//   push item to orangesLand
+
+// loop orangesLanded and applesLanded and compare against sameHouseRange
+// if (item === samsHouseRange) {
+//   push item to houseLandedApples
+// }
+
+// yield houseLandedApples
+
+
+function countApplesAndOranges(houseStartingPoint, houseEndingPoint, appleTree, orangeTree, appleDistance, orangeDistance) {
+
+  var orangesLanded = [];
+  var applesLanded = [];
+  var houseLandedApples = [];
+  var houseLandedOranges = [];
+  var samsHouseRange = range(houseStartingPoint, houseEndingPoint)
+
+  appleDistance.forEach(item => {
+    // item + appleTree
+    applesLanded.push(item + appleTree)
   })
+  console.log(applesLanded);
+
+  orangeDistance.forEach(item => {
+    // item + appleTree
+    orangesLanded.push(item + orangeTree)
+  })
+  console.log(orangesLanded);
+
+  for (var i = 0; i < applesLanded.length; i++) {
+    if (samsHouseRange.indexOf(applesLanded[i]) > -1) {
+      houseLandedApples.push(applesLanded[i]);
+    }
+  }
+
+  console.log(`houseLandedApples: ${houseLandedApples}`);
+
+  for (var i = 0; i < orangesLanded.length; i++) {
+    if (samsHouseRange.indexOf(orangesLanded[i]) > -1) {
+      houseLandedOranges.push(orangesLanded[i]);
+    }
+  }
+
+  console.log(`houseLandedOranges: ${houseLandedOranges}`);
   
-  console.log(minSum);
+  return (houseLandedApples, houseLandedOranges)
+
 }
 
-miniMaxSum([1, 5, 3, 7, 2])
+// countApplesAndOranges(7, 10, 4, 12, [2,3,-4], [3,-2,-4])
+console.log(countApplesAndOranges(7, 10, 4, 12, [2,3,-4], [3,-2,-4]));
+
+

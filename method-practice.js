@@ -68,3 +68,30 @@
 
 // var newArr = ages.filter(item => item < 33)
 // console.log(`newArr = ${newArr}`);
+
+
+// *************************************************************************************************************************************************************
+// Math.ceil()
+// *************************************************************************************************************************************************************
+
+function round5(x)
+{
+    return Math.ceil(x/5)*5;
+}
+
+console.log(round5(3));
+
+function round10(x)
+{
+    return Math.ceil(x/10)*10;
+}
+
+console.log(round10(3));
+
+function range(start, end) {
+    var ans = [];
+    for (let i = start; i <= end; i++) {
+        ans.push(i);
+    }
+    return ans;
+  }
