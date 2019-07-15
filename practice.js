@@ -1273,16 +1273,16 @@
 //     return waysToDivide
 
 
-function birthday(squares, ronsBDay, ronsBMonth) {
-  let waysToDivide = 0;
+// function birthday(squares, ronsBDay, ronsBMonth) {
+//   let waysToDivide = 0;
 
-  squares.forEach(item => {
-    if (item + ronsBMonth === ronsBDay) {
-      waysToDivide++
-    }
-  })
-  console.log(waysToDivide);
-  return waysToDivide
-}
+//   squares.forEach(item => {
+//     if (item + ronsBMonth === ronsBDay) {
+//       waysToDivide++
+//     }
+//   })
+//   console.log(waysToDivide);
+//   return waysToDivide
+// }
 
-birthday([2,2,1,3,2], 4, 2)
+// birthday([2,2,1,3,2], 4, 2)
