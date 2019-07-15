@@ -74,24 +74,44 @@
 // Math.ceil()
 // *************************************************************************************************************************************************************
 
-function round5(x)
-{
-    return Math.ceil(x/5)*5;
-}
+// function round5(x)
+// {
+//     return Math.ceil(x/5)*5;
+// }
 
-console.log(round5(3));
+// console.log(round5(3));
 
-function round10(x)
-{
-    return Math.ceil(x/10)*10;
-}
+// function round10(x)
+// {
+//     return Math.ceil(x/10)*10;
+// }
 
-console.log(round10(3));
+// console.log(round10(3));
 
-function range(start, end) {
-    var ans = [];
-    for (let i = start; i <= end; i++) {
-        ans.push(i);
+// *************************************************************************************************************************************************************
+// function to return an array of numbers of the range between start and end
+// *************************************************************************************************************************************************************
+
+// function range(start, end) {
+//     var ans = [];
+//     for (let i = start; i <= end; i++) {
+//         ans.push(i);
+//     }
+//     return ans;
+//   }
+
+function countPairs(n, arr) {
+    let pairs = 0;
+    const results = []
+    let sortedArr = arr.slice().sort()
+    console.log(sortedArr);
+  
+    for (var i = 0; i < sortedArr.length -1; i++) {
+      if (sortedArr[i +1] == sortedArr[i]) {
+        results.push(sortedArr[i])
+      }
     }
-    return ans;
+    console.log(results)
   }
+  
+  countPairs(7, [1,2,1,2,1,3,2])

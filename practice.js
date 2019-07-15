@@ -1048,32 +1048,32 @@
 // *************************************************************************************************************************************************************
 
 // psudocode
-  // parameters
-    // houseStartingPoint = 7
-    // houseEndingPoint = 10
-    // appleTree = 4
-    // orangeTree = 12
-    // appleDistance = [2,3,-4]
-    // orangeDistance = [3,-2,-4]
+//  parameters
+//    houseStartingPoint = 7
+//    houseEndingPoint = 10
+//    appleTree = 4
+//    orangeTree = 12
+//    appleDistance = [2,3,-4]
+//    orangeDistance = [3,-2,-4]
 
-  // functions
-    function range(start, end) {
-      var ans = [];
-      for (let i = start; i <= end; i++) {
-        ans.push(i);
-      }
-      // console.log(ans);
-      return ans;
-    }
+// functions
+  // function range(start, end) {
+  //   var ans = [];
+  //   for (let i = start; i <= end; i++) {
+  //     ans.push(i);
+  //   }
+  //   // console.log(ans);
+  //   return ans;
+  // }
 
-  // variables
-    // samsHouseRange = [7,8,9,10]
-    // apples = 3
-    // oranges = 3
-    // orangesLand = []
-    // applesLand = []
-    // houseLandedApples = []
-    // houseLandedOranges = []
+// variables
+//  samsHouseRange = [7,8,9,10]
+//  apples = 3
+//  oranges = 3
+//  orangesLand = []
+//  applesLand = []
+//  houseLandedApples = []
+//  houseLandedOranges = []
 
 // calculate samshouse range
 // samsHouseRange = [7,8,9,10]
@@ -1096,48 +1096,193 @@
 
 // yield houseLandedApples
 
+// function countApplesAndOranges(houseStartingPoint, houseEndingPoint, appleTree, orangeTree, appleDistance, orangeDistance) {
 
-function countApplesAndOranges(houseStartingPoint, houseEndingPoint, appleTree, orangeTree, appleDistance, orangeDistance) {
+//   var orangesLanded = [];
+//   var applesLanded = [];
+//   var houseLandedApples = [];
+//   var houseLandedOranges = [];
+//   var samsHouseRange = range(houseStartingPoint, houseEndingPoint)
 
-  var orangesLanded = [];
-  var applesLanded = [];
-  var houseLandedApples = [];
-  var houseLandedOranges = [];
-  var samsHouseRange = range(houseStartingPoint, houseEndingPoint)
+//   appleDistance.forEach(item => {
+//     // item + appleTree
+//     applesLanded.push(item + appleTree)
+//   })
+//   console.log(applesLanded);
 
-  appleDistance.forEach(item => {
-    // item + appleTree
-    applesLanded.push(item + appleTree)
-  })
-  console.log(applesLanded);
+//   orangeDistance.forEach(item => {
+//     // item + appleTree
+//     orangesLanded.push(item + orangeTree)
+//   })
+//   console.log(orangesLanded);
 
-  orangeDistance.forEach(item => {
-    // item + appleTree
-    orangesLanded.push(item + orangeTree)
-  })
-  console.log(orangesLanded);
+//   for (var i = 0; i < applesLanded.length; i++) {
+//     if (samsHouseRange.indexOf(applesLanded[i]) > -1) {
+//       houseLandedApples.push(applesLanded[i]);
+//     }
+//   }
+//   console.log(`houseLandedApples: ${houseLandedApples}`);
 
-  for (var i = 0; i < applesLanded.length; i++) {
-    if (samsHouseRange.indexOf(applesLanded[i]) > -1) {
-      houseLandedApples.push(applesLanded[i]);
+//   for (var i = 0; i < orangesLanded.length; i++) {
+//     if (samsHouseRange.indexOf(orangesLanded[i]) > -1) {
+//       houseLandedOranges.push(orangesLanded[i]);
+//     }
+//   }
+
+//   console.log(`houseLandedOranges: ${houseLandedOranges}`);
+//   return (houseLandedApples, houseLandedOranges)
+// }
+
+// // countApplesAndOranges(7, 10, 4, 12, [2,3,-4], [3,-2,-4])
+// console.log(countApplesAndOranges(7, 10, 4, 12, [2, 3, -4], [3, -2, -4]));
+
+
+// *************************************************************************************************************************************************************
+// John works at a clothing store. He has a large pile of socks that he must pair by color for sale. Given an array of integers representing the color of each sock,  
+// determine how many pairs of socks with matching colors there are.  For example, there are N = 7 socks with colors ar = [1,2,1,2,1,3,2]. There is one pair of color 1 and one of color 2. 
+// There are three odd socks left, one of each color. The number of pairs is 2.
+// *************************************************************************************************************************************************************
+
+// PSEUDOCODE
+
+//  parameters
+//    n = number of socks
+//    arr = the colors of each sock
+
+//  variables
+//    pairs = 0
+//    results
+//    sortedArr = []
+
+// sort the given array in ascending order
+// loop the sortedArr
+//  if (previous value = current value)
+//    push current value to results arr
+//  END IF
+
+
+
+
+
+// function countPairs(n, arr) {
+//   let pairs = 0;
+//   const results = []
+//   let sortedArr = arr.slice().sort()
+//   console.log(sortedArr);
+
+//   for (var i = 0; i < sortedArr.length -1; i++) {
+//     if (sortedArr[i +1] == sortedArr[i]) {
+//       results.push(sortedArr[i])
+//     }
+//   }
+//   console.log(results)
+// }
+
+// countPairs(7, [1,2,1,2,1,3,2])
+
+
+
+// *************************************************************************************************************************************************************
+// Maria plays college basketball and wants to go pro. Each season she maintains a record of her play. She tabulates the number of times she breaks her season 
+// record for most points and least points in a game. Points scored in the first game establish her record for the season, and she begins counting from there.
+// *************************************************************************************************************************************************************
+
+// psudeocode 
+
+//   parameters 
+//     scores = [12,24,10,24]
+
+//   variables
+//     records = [0,0]
+//     min = records[0]
+//     max = records[1]
+
+//   functions
+
+
+//   min = scores[0]
+//   max = scores[0]
+
+//   loop scores Array 
+//     for each item check item against min and max
+//       if (item > max) {
+//         max = item
+//       }
+//       else if (item < min) {
+//         min = item
+//       }
+//       return records
+//       END IF  
+
+
+// function breakingRecords(scores) {
+//     let records = [0,0]
+//     let min = records[0]
+//     let max = records[1]    
+//     let minRecord = 0
+//     let maxRecord = 0
+
+//     min = scores[0]
+//     max = scores[0]
+
+//     scores.forEach(item => {
+//       if (item > max) {
+//         maxRecord++
+//       }
+//       else if (item < min) {
+//         minRecord++
+//       }
+//     })
+//     console.log(minRecord, maxRecord)
+
+// }
+
+//  breakingRecords([12,24,10,24])
+
+
+
+// *************************************************************************************************************************************************************
+// Lily has a chocolate bar that she wants to share it with Ron for his birthday. Each of the squares has an integer on it. 
+// She decides to share a contiguous segment of the bar selected such that the length of the segment matches Ron's birth month 
+// and the sum of the integers on the squares is equal to his birth day. You must determine how many ways she can divide the chocolate.
+// *************************************************************************************************************************************************************
+
+// pseudoCode
+
+//   parameters 
+//     squares = [2,2,1,3,2];
+//     ronsBDay = 4;
+//     ronsBMonth = 2;
+
+//   variables 
+//     waysToDivide = 0;
+
+//   functions
+
+
+//   loop through squares Array 
+//     for each item   
+//       if (item + ronsBMonth === ronsBday) {
+//         waysToDivide++
+//       }
+//       else {
+//         error
+//       }
+//       END IF  
+
+//     return waysToDivide
+
+
+function birthday(squares, ronsBDay, ronsBMonth) {
+  let waysToDivide = 0;
+
+  squares.forEach(item => {
+    if (item + ronsBMonth === ronsBDay) {
+      waysToDivide++
     }
-  }
-
-  console.log(`houseLandedApples: ${houseLandedApples}`);
-
-  for (var i = 0; i < orangesLanded.length; i++) {
-    if (samsHouseRange.indexOf(orangesLanded[i]) > -1) {
-      houseLandedOranges.push(orangesLanded[i]);
-    }
-  }
-
-  console.log(`houseLandedOranges: ${houseLandedOranges}`);
-  
-  return (houseLandedApples, houseLandedOranges)
-
+  })
+  console.log(waysToDivide);
+  return waysToDivide
 }
 
-// countApplesAndOranges(7, 10, 4, 12, [2,3,-4], [3,-2,-4])
-console.log(countApplesAndOranges(7, 10, 4, 12, [2,3,-4], [3,-2,-4]));
-
-
+birthday([2,2,1,3,2], 4, 2)
