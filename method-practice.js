@@ -100,18 +100,18 @@
 //     return ans;
 //   }
 
-function countPairs(n, arr) {
-    let pairs = 0;
-    const results = []
-    let sortedArr = arr.slice().sort()
-    console.log(sortedArr);
+// function countPairs(n, arr) {
+//     let pairs = 0;
+//     const results = []
+//     let sortedArr = arr.slice().sort()
+//     console.log(sortedArr);
   
-    for (var i = 0; i < sortedArr.length -1; i++) {
-      if (sortedArr[i +1] == sortedArr[i]) {
-        results.push(sortedArr[i])
-      }
-    }
-    console.log(results)
-  }
+//     for (var i = 0; i < sortedArr.length -1; i++) {
+//       if (sortedArr[i +1] == sortedArr[i]) {
+//         results.push(sortedArr[i])
+//       }
+//     }
+//     console.log(results)
+//   }
   
-  countPairs(7, [1,2,1,2,1,3,2])
+//   countPairs(7, [1,2,1,2,1,3,2])

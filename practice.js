@@ -1286,3 +1286,51 @@
 // }
 
 // birthday([2,2,1,3,2], 4, 2)
+
+
+// *************************************************************************************************************************************************************
+// Dan is playing a video game in which his character competes in a hurdle race. Hurdles are of varying heights, and Dan has a maximum height he can jump. 
+// There is a magic potion he can take that will increase his maximum height by 1 unit for each dose. How many doses of the potion must he take to be able to jump all of the hurdles.
+// Given an array of hurdle heights height, and an initial maximum height Dan can jump, k, determine the minimum number of doses Dan must take to be able to clear all the hurdles in the race.
+// *************************************************************************************************************************************************************
+
+// PSEUDOCODE
+
+// Parameters
+//  hurdleHeight = []
+//  jumpHeight = a
+
+// variables
+//  highestHurdle = 0
+//  potionsNeeded = 0
+
+// loop thru hurdleHeight array and find the biggest #
+// store the biggest # in the highestHurdle var
+
+// hurdleHieght.forEach(item => {
+//   if (item > highestHurdle) {
+//     highestHurdle = item
+//   }
+//   return highestHurdle
+// })
+
+// subtract jumpHeight from highestHurdle 
+// potionsNeeded = highestHurdle - jumpHeight
+
+// function hurdleRace(hurdleHeight, jumpHeight) {
+//   let highestHurdle = 0;
+//   let potionsNeeded = 0;
+
+//   hurdleHeight.forEach(item => {
+//     if (item > highestHurdle) {
+//       highestHurdle = item
+//     }
+    
+//   })
+//   console.log(highestHurdle)
+//   potionsNeeded = highestHurdle - jumpHeight
+//   console.log(potionsNeeded)
+// }
+
+// hurdleRace([1,2,3,3,2], 1)
+
