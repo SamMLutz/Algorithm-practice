@@ -1057,14 +1057,14 @@
 //    orangeDistance = [3,-2,-4]
 
 // functions
-  // function range(start, end) {
-  //   var ans = [];
-  //   for (let i = start; i <= end; i++) {
-  //     ans.push(i);
-  //   }
-  //   // console.log(ans);
-  //   return ans;
-  // }
+// function range(start, end) {
+//   var ans = [];
+//   for (let i = start; i <= end; i++) {
+//     ans.push(i);
+//   }
+//   // console.log(ans);
+//   return ans;
+// }
 
 // variables
 //  samsHouseRange = [7,8,9,10]
@@ -1325,7 +1325,7 @@
 //     if (item > highestHurdle) {
 //       highestHurdle = item
 //     }
-    
+
 //   })
 //   console.log(highestHurdle)
 //   potionsNeeded = highestHurdle - jumpHeight
@@ -1334,3 +1334,83 @@
 
 // hurdleRace([1,2,3,3,2], 1)
 
+
+// *************************************************************************************************************************************************************
+// You have been asked to help study the population of birds migrating across the continent. Each type of bird you are interested in will be identified by an integer value. 
+// Each time a particular kind of bird is spotted, its id number will be added to your array of sightings. You would like to be able to find out which type of bird is most common given a list of sightings. 
+// Your task is to print the type number of that bird and if two or more types of birds are equally common, choose the type with the smallest ID number.
+// *************************************************************************************************************************************************************
+
+// PSUEDOCODE
+
+//   Parameters 
+//     birdSightingType = [1,2,2,3,5]
+
+//   Variables 
+//     birdTypes = [0,0,0,0,0];
+//     mostSighted = 0;
+
+
+//   loop over birdSightingType array 
+
+//     birdSightingType.forEach(item)
+//       if (item === 1)
+//         birdTypes[0] += 1;
+//       else if (item === 2) 
+//         birdTypes[0] += 1;
+//       else if (item === 3) 
+//         birdTypes[0] += 1;
+//       else if (item === 4) 
+//         birdTypes[0] += 1;
+//       else if (item === 5) 
+//         birdTypes[0] += 1;
+//       else 
+//         log (err)
+
+//     loop over birdTypes arr 
+
+//       birdTypes.foreach(item) 
+//         if (item > mostSighted)
+//           mostSighted = item 
+//         else
+//           log (err)
+
+
+function migratoryBirds(arr) {
+  const birdTypes = [0, 0, 0, 0, 0];
+  let mostSightings = 0;
+  let mostSighted;
+
+  arr.forEach(item => {
+    if (item === 1) {
+      birdTypes[0] += 1;
+    }
+    else if (item === 2) {
+      birdTypes[1] += 1;
+    }
+    else if (item === 3) {
+      birdTypes[2] += 1;
+    }
+    else if (item === 4) {
+      birdTypes[3] += 1;
+    }
+    else if (item === 5) {
+      birdTypes[4] += 1;
+    }
+    console.log(birdTypes)
+  })
+  console.log(birdTypes)
+
+  birdTypes.forEach(item => {
+    if (item > mostSightings) {
+      mostSightings = item
+      
+    }
+    
+  })
+  
+  console.log(mostSightings)
+  console.log(`mostSighted: ${mostSighted}`)
+}
+
+migratoryBirds([1, 3, 3, 2, 2])
