@@ -42,25 +42,46 @@
 //      
 
 
-const maskify = str => {
-    str = str.split('')
-    console.log(str)
-    let lastFour = str.slice(-4)
-    console.log(lastFour)
-    const toEncrypt = str.slice(0,-4)
-    console.log(toEncrypt)
-    const encrypted = toEncrypt.map(item => item = "#")
-    console.log(encrypted)
-    const newArr = encrypted.concat(lastFour)
-    console.log(newArr)
+// const maskify = str => {
+//     str = str.split('')
+//     console.log(str)
+//     let lastFour = str.slice(-4)
+//     console.log(lastFour)
+//     const toEncrypt = str.slice(0,-4)
+//     console.log(toEncrypt)
+//     const encrypted = toEncrypt.map(item => item = "#")
+//     console.log(encrypted)
+//     const newArr = encrypted.concat(lastFour)
+//     console.log(newArr)
+// }
+
+// maskify('1234567')
+
+
+// *************************************************************************************************************************************************************
+// get all vowels out of a given string
+// *************************************************************************************************************************************************************
+
+// function disemvowel(str) {
+//     const vowels = ["a","e","i","o","u"]
+//     const vowelHolder = []
+//     let newStr = str.toLowerCase()
+//     // console.log(newStr)
+//     newStr = newStr.split('')
+//     console.log(newStr)
     
+// //     newStr.forEach(item => {
+// //         console.log(item)
+// //         if (item === "a"||"e"||"i"||"o"||"u") {
+// //             vowelHolder.push(item)
+// //         }
+// //     })
+// //     console.log("vowelHolder: " +  vowelHolder)
+// }
+
+function disemvowel(str) {
+    return str.replace(/[aeiou]/gi, '');
+
 }
 
-maskify('1234567')
-
-// const arr = [1,2,3,4]
-
-// const newArr = arr.map(item => item = "#")
-
-// console.log(newArr)
-
+  console.log(disemvowel("Yurp and the Churps nurp hard"))
