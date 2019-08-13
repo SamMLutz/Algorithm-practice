@@ -144,3 +144,125 @@
 
 // catAndMouse(1, 3, 2)
 
+// *************************************************************************************************************************************************************
+
+// *************************************************************************************************************************************************************
+
+// PSEUDOCODE
+
+//     parameters 
+//         year 
+
+//     variables
+//         leapYear = false;
+//         calendar;
+
+
+
+//     determine by year which calendar system we are using 
+//         if (year < 1918)
+//             calendar = julian
+//         else if (year > 1917)
+//             calendar = gregorian
+
+//     determine by the calendar and year if we are in a leap year
+//         if (calendar === julian)
+//             if (year % 4 === 0)
+//                 leapYear = true;
+//             else 
+//                 leapYear = false
+        
+//         else if (calendar === gregorian)
+//             if (year % 400 === 0)
+//                 leapYear = true;
+//             else if (year % 4 === 0 && year % 100 !== 0) 
+//                 leapYear = true;
+//             else    
+//                 leapYear = false
+
+//     determine num of days in first 8 months based on calendar and leapyear status
+//         if (calendar === julian && leapYear)
+//             feb++
+
+
+const months = [
+    {
+        name: "jan",
+        days: 31
+    },
+    {
+        name: "feb",
+        days: 28
+    },
+    {
+        name: "march",
+        days: 31
+    },
+    {
+        name: "april",
+        days: 30
+    },
+    {
+        name: "may",
+        days: 31
+    },
+    {
+        name: "june",
+        days: 30
+    },
+    {
+        name: "july",
+        days: 31
+    },
+    {
+        name: "august",
+        days: 31
+    },
+]
+
+function dayOfProgrammer(year) {
+    let leapYear = false;
+    let calendar;
+    let daysOfMonthSum = 0;
+    let programmerDay = 256;
+    
+    if (year < 1918) {
+        calendar = "julian"
+    }
+    else if (year > 1917) {
+        calendar = "gregorian"
+    }
+    console.log(`calendar: ${calendar}`)
+
+    if (calendar === "julian") {
+        if (year % 4 === 0) {
+            leapYear = true;
+        }
+        else {
+            leapYear = false;
+        }
+    }
+    console.log(leapYear)
+
+    if (calendar === "julian" && leapYear === false) {
+        months.forEach(item => {
+            daysOfMonthSum += item.days
+        
+        })
+        console.log(daysOfMonthSum)
+        const septDate = programmerDay - daysOfMonthSum
+        console.log(`day of the programmer: ${septDate}.09.${year}`)
+    }
+    else if (calendar === "julian" && leapYear === true) {
+        months[1].days = 29;
+        months.forEach(item => {
+            daysOfMonthSum += item.days
+            
+        })
+        console.log(daysOfMonthSum)
+        const septDate = programmerDay - daysOfMonthSum
+        console.log(`day of the programmer: ${septDate}.09.${year}`)
+    }
+}
+
+dayOfProgrammer(1927)
