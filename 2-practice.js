@@ -129,7 +129,7 @@
 //   const distanceBToC = Math.abs(y - z);
 //   console.log(distanceAToC)
 //   console.log(distanceBToC)
-  
+
 //   if (distanceAToC < distanceBToC) {
 //     console.log("catA")
 //   }
@@ -171,7 +171,7 @@
 //                 leapYear = true;
 //             else 
 //                 leapYear = false
-        
+
 //         else if (calendar === gregorian)
 //             if (year % 400 === 0)
 //                 leapYear = true;
@@ -185,84 +185,152 @@
 //             feb++
 
 
-const months = [
-    {
-        name: "jan",
-        days: 31
-    },
-    {
-        name: "feb",
-        days: 28
-    },
-    {
-        name: "march",
-        days: 31
-    },
-    {
-        name: "april",
-        days: 30
-    },
-    {
-        name: "may",
-        days: 31
-    },
-    {
-        name: "june",
-        days: 30
-    },
-    {
-        name: "july",
-        days: 31
-    },
-    {
-        name: "august",
-        days: 31
-    },
-]
+// const months = [
+//     {
+//         name: "jan",
+//         days: 31
+//     },
+//     {
+//         name: "feb",
+//         days: 28
+//     },
+//     {
+//         name: "march",
+//         days: 31
+//     },
+//     {
+//         name: "april",
+//         days: 30
+//     },
+//     {
+//         name: "may",
+//         days: 31
+//     },
+//     {
+//         name: "june",
+//         days: 30
+//     },
+//     {
+//         name: "july",
+//         days: 31
+//     },
+//     {
+//         name: "august",
+//         days: 31
+//     },
+// ]
 
-function dayOfProgrammer(year) {
-    let leapYear = false;
-    let calendar;
-    let daysOfMonthSum = 0;
-    let programmerDay = 256;
-    
-    if (year < 1918) {
-        calendar = "julian"
-    }
-    else if (year > 1917) {
-        calendar = "gregorian"
-    }
-    console.log(`calendar: ${calendar}`)
+// function dayOfProgrammer(year) {
+//     let leapYear = false;
+//     let calendar;
+//     let daysOfMonthSum = 0;
+//     let programmerDay = 256;
 
-    if (calendar === "julian") {
-        if (year % 4 === 0) {
-            leapYear = true;
-        }
-        else {
-            leapYear = false;
-        }
-    }
-    console.log(leapYear)
+//     if (year < 1918) {
+//         calendar = "julian"
+//     }
+//     else if (year > 1917) {
+//         calendar = "gregorian"
+//     }
+//     console.log(`calendar: ${calendar}`)
 
-    if (calendar === "julian" && leapYear === false) {
-        months.forEach(item => {
-            daysOfMonthSum += item.days
-        
-        })
-        console.log(daysOfMonthSum)
-        const septDate = programmerDay - daysOfMonthSum
-        console.log(`day of the programmer: ${septDate}.09.${year}`)
+//     if (calendar === "julian") {
+//         if (year % 4 === 0) {
+//             leapYear = true;
+//         }
+//         else {
+//             leapYear = false;
+//         }
+//     }
+//     console.log(leapYear)
+
+//     if (calendar === "julian" && leapYear === false) {
+//         months.forEach(item => {
+//             daysOfMonthSum += item.days
+
+//         })
+//         console.log(daysOfMonthSum)
+//         const septDate = programmerDay - daysOfMonthSum
+//         console.log(`day of the programmer: ${septDate}.09.${year}`)
+//     }
+//     else if (calendar === "julian" && leapYear === true) {
+//         months[1].days = 29;
+//         months.forEach(item => {
+//             daysOfMonthSum += item.days
+
+//         })
+//         console.log(daysOfMonthSum)
+//         const septDate = programmerDay - daysOfMonthSum
+//         console.log(`day of the programmer: ${septDate}.09.${year}`)
+//     }
+// }
+
+// dayOfProgrammer(1927)
+
+// *************************************************************************************************************************************************************
+// Anna and Brian are sharing a meal at a restuarant and they agree to split the bill equally. Brian wants to order something that Anna is allergic to though, 
+// and they agree that Anna won't pay for that item. Brian gets the check and calculates Anna's portion. You must determine if his calculation is correct.
+// For example, assume the bill has the following prices: bill = [2,4,6]. Anna declines to eat item K  which costs 6. If Brian calculates the bill correctly, Anna will pay (2+4)/2 =3. 
+// If he includes the cost of bill[2], he will calculate (2 + 4 + 6)/2 = 6. In the second case, he should refund 3 to Anna.
+// *************************************************************************************************************************************************************
+
+// PSEUDOCODE
+
+//     parameters 
+//         bill = an array of integers representing food items;
+//         k = an integer representing the zero-based index of the item Anna doesn't eat
+//         a = the amount of money that Anna contributed to the bill
+
+//     variables
+//         billTotal = sum of bill integers
+//         refund = how much anna needs to be refunded
+//         newTotal = total minus item k
+
+//     calculate bill totalBill
+//         totalBill;
+
+//     calculate totalBill without item k
+//         newTotal = totalBill - k
+
+//     calculate splitBill from newTotal
+//         splitBill = newTotal / 2
+
+//     compare splitBill to b  
+//         if (splitBill === b) 
+//             log "correct"
+//         else if (splitBill !== b)
+//             refund = b - splitBill
+//             log "you owe anna (refund)"
+
+
+function bonAppetit(bill, k, b) {
+    let billTotal = 0;
+    let refund;
+    let newTotal;
+    const itemNotShared = bill[k]
+    let splitBill;
+
+    bill.forEach(item => {
+        billTotal += item
+    });
+
+    newTotal = billTotal - itemNotShared;
+
+    splitBill = newTotal / 2;
+
+    refund = b - splitBill;
+
+    console.log(billTotal)
+    console.log(`newTotal: ${newTotal}`)
+    console.log(`splitBill: ${splitBill}`)
+    console.log(`refund: ${refund}`)
+
+    if (refund === 0) {
+        console.log("correctly calculated")
     }
-    else if (calendar === "julian" && leapYear === true) {
-        months[1].days = 29;
-        months.forEach(item => {
-            daysOfMonthSum += item.days
-            
-        })
-        console.log(daysOfMonthSum)
-        const septDate = programmerDay - daysOfMonthSum
-        console.log(`day of the programmer: ${septDate}.09.${year}`)
+    else {
+        console.log(`Brian owes Anna $${refund}`)
     }
 }
 
-dayOfProgrammer(1927)
+bonAppetit([3, 10, 2, 9], 1, 7)
