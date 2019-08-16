@@ -303,34 +303,125 @@
 //             log "you owe anna (refund)"
 
 
-function bonAppetit(bill, k, b) {
-    let billTotal = 0;
-    let refund;
-    let newTotal;
-    const itemNotShared = bill[k]
-    let splitBill;
+// function bonAppetit(bill, k, b) {
+//     let billTotal = 0;
+//     let refund;
+//     let newTotal;
+//     const itemNotShared = bill[k]
+//     let splitBill;
 
-    bill.forEach(item => {
-        billTotal += item
-    });
+//     bill.forEach(item => {
+//         billTotal += item
+//     });
 
-    newTotal = billTotal - itemNotShared;
+//     newTotal = billTotal - itemNotShared;
 
-    splitBill = newTotal / 2;
+//     splitBill = newTotal / 2;
 
-    refund = b - splitBill;
+//     refund = b - splitBill;
 
-    console.log(billTotal)
-    console.log(`newTotal: ${newTotal}`)
-    console.log(`splitBill: ${splitBill}`)
-    console.log(`refund: ${refund}`)
+//     console.log(billTotal)
+//     console.log(`newTotal: ${newTotal}`)
+//     console.log(`splitBill: ${splitBill}`)
+//     console.log(`refund: ${refund}`)
 
-    if (refund === 0) {
-        console.log("correctly calculated")
+//     if (refund === 0) {
+//         console.log("correctly calculated")
+//     }
+//     else {
+//         console.log(`Brian owes Anna $${refund}`)
+//     }
+// }
+
+// bonAppetit([3, 10, 2, 9], 1, 7)
+
+// *************************************************************************************************************************************************************
+// Brie’s Drawing teacher asks her class to open their books to a page number. Brie can either start turning pages from the front of the book or from the back of the book. 
+// She always turns pages one at a time. When she opens the book, page 1 is always on the right side:
+// When she flips page 1, she sees pages 2 and 3. Each page except the last page will always be printed on both sides. The last page may only be printed on the front, 
+// given the length of the book. If the book is N pages long, and she wants to turn to page P, what is the minimum number of pages she will turn? 
+// She can start at the beginning or the end of the book. Given N and P, find and print the minimum number of pages Brie must turn in order to arrive at page P
+// *************************************************************************************************************************************************************
+
+// PSUEDOCODE
+
+//     parameters 
+//         n = number of total pages in book;
+//         p = the page brie wants to turn to
+
+//     variables
+//         pagesToTurn;
+//         turnFromFront = true;
+
+//     calculate if p is closer to 1 or n  
+//         diffToOne = abs(1 - p)
+//         diffToEnd = abs(p -n)
+
+//     determine if we will turn pages from front or back
+//         if (diffToOne > diffToEnd)
+//             turnFromFront = false;
+//         else if (diffToOne < diffToEnd)
+//             turnFromFront = true;
+
+//     once we know which way we are turning. determine how many pages need be turned 
+//         if (diff < 2 )
+//             pagesToTurn = 1;
+//         else if (diff > 2)
+//             loop diff
+//                 if (i % 2 === 0)
+//                     pagesToTurn +=1
+
+
+function pageCount(n, p) {
+    let turnFromFront;
+    let pagesToTurn = 0;
+
+    const diffToOne = Math.abs(1 - p)
+    console.log(`diffToOne: ${diffToOne}`)
+
+    const diffToEnd = Math.abs(n - p)
+    console.log(`diffToEnd: ${diffToEnd}`)
+
+    if (diffToOne > diffToEnd) {
+        turnFromFront = false;
     }
     else {
-        console.log(`Brian owes Anna $${refund}`)
+        turnFromFront = true;
+    }
+
+    if (turnFromFront) {
+        console.log("yurp")
+        if (diffToOne <= 2) {
+            pagesToTurn = 1;
+        }
+        else {
+            for (var i = 0; i < diffToOne; i++) {
+                // console.log(i)
+                if (i % 2 === 0) {
+                    pagesToTurn += 1
+                }
+            }
+        }
+        console.log(`pagesToTurn: ${pagesToTurn}`)
+    }
+    else {
+        if (!turnFromFront) {
+            console.log("churp")
+            if (diffToEnd <= 2) {
+                pagesToTurn = 1;
+            }
+            else {
+                for (var i = 0; i < diffToEnd; i++) {
+                    // console.log(i)
+                    if (i % 2 === 0) {
+                        pagesToTurn += 1
+                    }
+                } 
+            }
+        }
+        console.log(`pagesToTurn: ${pagesToTurn}`)
     }
 }
 
-bonAppetit([3, 10, 2, 9], 1, 7)
+pageCount(24, 16)
+
