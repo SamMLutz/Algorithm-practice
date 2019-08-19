@@ -455,57 +455,108 @@
 //                 add 1 step to seaLevel
 //             END if
 
-            // if (seaLevel === 0 && letter[i] -1 === 'U')
-            //     add 1 to valleys;
+// if (seaLevel === 0 && letter[i] -1 === 'U')
+//     add 1 to valleys;
 
-        
-        
-        
-function countingValleys(n, s) {
-    let seaLevel = 0;
-    const step = 1;
-    let valleys = 0;
-    let pathArr = s.split('')
-    console.log(pathArr)
 
-    // pathArr.forEach((item, index) => {
-    //     if (item === 'U') {
-    //         seaLevel += 1;
-    //     }
-    //     else {
-    //         seaLevel -= 1;
-    //     }
-    //     console.log(`seaLevel: ${seaLevel}`)
-    //     console.log(`index: ${index}`)
-        
-    //     if (index > 1 && seaLevel === 0) {
-    //         console.log(`index back to seaLeval: ${index}`)
-    //         console.log()
-    //     }
-    // })
+// function countingValleys(n, s) {
+//     let seaLevel = 0;
+//     const step = 1;
+//     let valleys = 0;
+//     let pathArr = s.split('')
+//     console.log(pathArr)
 
-    for (var i = 0; i < pathArr.length; i ++) {
-        let currentValue = pathArr[i]
-        console.log(`currentValue: ${currentValue}`)
-        if (currentValue === 'U') {
-            seaLevel += 1;
-        }
-        else {
-            seaLevel -=1;
-        }
-        console.log(`seaLevel: ${seaLevel}`)
+//     pathArr.forEach((item, index) => {
+//         if (item === 'U') {
+//             seaLevel += 1;
+//         }
+//         else {
+//             seaLevel -= 1;
+//         }
+//         console.log(`seaLevel: ${seaLevel}`)
+//         console.log(`index: ${index}`)
 
-        if (seaLevel === 0 && currentValue === 'U') {
-            // if (pathArr[i -1]) {
-            // console.log(`pathArr[i-1]: ${pathArr[i -1]}`)
-            // console.log(`currentValue when seaLevel = 0: ${currentValue}`)
-            // }
-            valleys += 1
-        }
+//         if (index > 1 && seaLevel === 0) {
+//             console.log(`index back to seaLeval: ${index}`)
+//         }
+//     })
+
+//     for (var i = 0; i < pathArr.length; i++) {
+//         let currentValue = pathArr[i]
+//         console.log(`currentValue: ${currentValue}`)
+//         if (currentValue === 'U') {
+//             seaLevel += 1;
+//         }
+//         else {
+//             seaLevel -= 1;
+//         }
+//         console.log(`seaLevel: ${seaLevel}`)
+
+//         if (seaLevel === 0 && currentValue === 'U') {
+//             // if (pathArr[i -1]) {
+//             // console.log(`pathArr[i-1]: ${pathArr[i -1]}`)
+//             // console.log(`currentValue when seaLevel = 0: ${currentValue}`)
+//             // }
+//             valleys += 1
+//         }
+//     }
+//     console.log(`Valleys: ${valleys}`)
+// }
+
+// countingValleys(12, 'UDDUDDUUDDUU')
+
+
+// *************************************************************************************************************************************************************
+// Monica wants to buy a keyboard and a USB drive from her favorite electronics store. The store has several models of each. 
+// Monica wants to spend as much as possible for the 2 items, given her budget. Given the price lists for the store's keyboards and USB drives, and Monica's budget, 
+// find and print the amount of money Monica will spend.
+// If she doesn't have enough money to both a keyboard and a USB drive, print -1 instead. She will buy only the two required items.
+// *************************************************************************************************************************************************************
+
+// COME BACK TO SOLVE IF KEYBOARDS AND DRIVES ARE A SINGLE VALUE AND NOT AN ARRAY!!!!!!!!!!!!!!!!!!!!!!!!
+
+// PSUEDOCODE
+
+//     PARAMETERS 
+//         b = units of currency in monicas budget
+//         keyBoards = an array of keyboard prices
+//         drives = array of drive prices
+
+//     VARIABLES   
+//         combinations = an array representing to all possible totals of 1 kb and 1 dr
+
+//     first calculate the total price of all possible combinations of keyBoards and drives
+//         loop over keyBoards array and create a new array for each item 
+//             loop over drives and add each to the first loops current value and push to the combinations array
+
+//     compare each index of the combinations array to b and pinpoint which is < b with the lowest abs difference
     
-    }
-    console.log(`Valleys: ${valleys}`)
+    
+// function getMoneySpent(b, keyBoards, drives) {
+//     let combinations = [];
+//     let total;
+//     let bestCaseTotal = 0;
+//     keyBoards.forEach(item => {
+        
+//         drives.forEach(drive => {
+//             console.log(`item: ${item}`)
+//             console.log(`drive: ${drive}`)
+//             total = item + drive;
+//             console.log(`total: ${total}`)
+//             console.log('################')
+//             combinations.push(total)
+//         })
+//     })
+//     console.log(`combinations: ${combinations}`)
+//     const possibleTotals = combinations.filter(item => item < b)
+//     console.log(`possibleTotals: ${possibleTotals}`)
+//     possibleTotals.forEach(item => {
+//         if (item > bestCaseTotal) {
+//             bestCaseTotal = item;
+//         }
+//     })
+//     console.log(`bestCaseTotal: ${bestCaseTotal}`)
+//    }
 
-}
-
-countingValleys(8, 'UDDUDDUU')
+// getMoneySpent(10, [3,1],[5,2,8])
+// // getMoneySpent(5, 4, 5)
