@@ -372,56 +372,140 @@
 //                     pagesToTurn +=1
 
 
-function pageCount(n, p) {
-    let turnFromFront;
-    let pagesToTurn = 0;
+// function pageCount(n, p) {
+//     let turnFromFront;
+//     let pagesToTurn = 0;
 
-    const diffToOne = Math.abs(1 - p)
-    console.log(`diffToOne: ${diffToOne}`)
+//     const diffToOne = Math.abs(1 - p)
+//     console.log(`diffToOne: ${diffToOne}`)
 
-    const diffToEnd = Math.abs(n - p)
-    console.log(`diffToEnd: ${diffToEnd}`)
+//     const diffToEnd = Math.abs(n - p)
+//     console.log(`diffToEnd: ${diffToEnd}`)
 
-    if (diffToOne > diffToEnd) {
-        turnFromFront = false;
-    }
-    else {
-        turnFromFront = true;
-    }
+//     if (diffToOne > diffToEnd) {
+//         turnFromFront = false;
+//     }
+//     else {
+//         turnFromFront = true;
+//     }
 
-    if (turnFromFront) {
-        console.log("yurp")
-        if (diffToOne <= 2) {
-            pagesToTurn = 1;
+//     if (turnFromFront) {
+//         console.log("yurp")
+//         if (diffToOne <= 2) {
+//             pagesToTurn = 1;
+//         }
+//         else {
+//             for (var i = 0; i < diffToOne; i++) {
+//                 // console.log(i)
+//                 if (i % 2 === 0) {
+//                     pagesToTurn += 1
+//                 }
+//             }
+//         }
+//         console.log(`pagesToTurn: ${pagesToTurn}`)
+//     }
+//     else {
+//         if (!turnFromFront) {
+//             console.log("churp")
+//             if (diffToEnd <= 2) {
+//                 pagesToTurn = 1;
+//             }
+//             else {
+//                 for (var i = 0; i < diffToEnd; i++) {
+//                     // console.log(i)
+//                     if (i % 2 === 0) {
+//                         pagesToTurn += 1
+//                     }
+//                 } 
+//             }
+//         }
+//         console.log(`pagesToTurn: ${pagesToTurn}`)
+//     }
+// }
+
+// pageCount(24, 16)
+
+
+// *************************************************************************************************************************************************************
+// Gary is an avid hiker. He tracks his hikes meticulously, paying close attention to small details like topography. During his last hike he took exactly N steps. 
+// For every step he took, he noted if it was an uphill, U, or a downhill, D step. Gary's hikes start and end at sea level and each step up or down represents a 1 unit change in altitude.
+// We define the following terms:
+// -A mountain is a sequence of consecutive steps above sea level, starting with a step up from sea level and ending with a step down to sea level.
+// -A valley is a sequence of consecutive steps below sea level, starting with a step down from sea level and ending with a step up to sea level.
+// Given Gary's sequence of up and down steps during his last hike, find and print the number of valleys he walked through.
+// *************************************************************************************************************************************************************
+
+// PSUEDOCODE
+
+//     PARAMETERS  
+//         n = number of steps gary takes 
+//         s = string describing garys path 
+
+//     VARIABLES
+//         seaLevel = 0;
+//         step = 1;
+//         pathArr;
+//         valleys = 0;
+
+//     first split the s string into an Array
+//         loop the array and add or subtract a step based on letter of each index 
+//             if (letter = 'd')
+//                 subtract 1 step from seaLevel
+//             else if (letter = 'u')
+//                 add 1 step to seaLevel
+//             END if
+
+            // if (seaLevel === 0 && letter[i] -1 === 'U')
+            //     add 1 to valleys;
+
+        
+        
+        
+function countingValleys(n, s) {
+    let seaLevel = 0;
+    const step = 1;
+    let valleys = 0;
+    let pathArr = s.split('')
+    console.log(pathArr)
+
+    // pathArr.forEach((item, index) => {
+    //     if (item === 'U') {
+    //         seaLevel += 1;
+    //     }
+    //     else {
+    //         seaLevel -= 1;
+    //     }
+    //     console.log(`seaLevel: ${seaLevel}`)
+    //     console.log(`index: ${index}`)
+        
+    //     if (index > 1 && seaLevel === 0) {
+    //         console.log(`index back to seaLeval: ${index}`)
+    //         console.log()
+    //     }
+    // })
+
+    for (var i = 0; i < pathArr.length; i ++) {
+        let currentValue = pathArr[i]
+        console.log(`currentValue: ${currentValue}`)
+        if (currentValue === 'U') {
+            seaLevel += 1;
         }
         else {
-            for (var i = 0; i < diffToOne; i++) {
-                // console.log(i)
-                if (i % 2 === 0) {
-                    pagesToTurn += 1
-                }
-            }
+            seaLevel -=1;
         }
-        console.log(`pagesToTurn: ${pagesToTurn}`)
-    }
-    else {
-        if (!turnFromFront) {
-            console.log("churp")
-            if (diffToEnd <= 2) {
-                pagesToTurn = 1;
-            }
-            else {
-                for (var i = 0; i < diffToEnd; i++) {
-                    // console.log(i)
-                    if (i % 2 === 0) {
-                        pagesToTurn += 1
-                    }
-                } 
-            }
+        console.log(`seaLevel: ${seaLevel}`)
+
+        if (seaLevel === 0 && currentValue === 'U') {
+            // if (pathArr[i -1]) {
+            // console.log(`pathArr[i-1]: ${pathArr[i -1]}`)
+            // console.log(`currentValue when seaLevel = 0: ${currentValue}`)
+            // }
+            valleys += 1
         }
-        console.log(`pagesToTurn: ${pagesToTurn}`)
+    
     }
+    console.log(`Valleys: ${valleys}`)
+
 }
 
-pageCount(24, 16)
-
+countingValleys(8, 'UDDUDDUU')
