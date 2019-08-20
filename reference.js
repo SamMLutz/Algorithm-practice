@@ -10,12 +10,11 @@ if (leapYear) {
     })
 }
 else {
-    months.forEach(item => {
+   months.forEach(item => {
         sum += item.days
     
     })
 }
-
 
 
 console.log(sum)

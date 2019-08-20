@@ -560,3 +560,50 @@
 
 // getMoneySpent(10, [3,1],[5,2,8])
 // // getMoneySpent(5, 4, 5)
+
+
+// *************************************************************************************************************************************************************
+// Given an array of integers, find and print the maximum number of integers you can select from the array 
+// such that the absolute difference between any two of the chosen integers is less than or equal to 1. 
+// For example, if your array is A = [1,1,2,2,4,4,5,5,5], you can create two subarrays meeting the criterion: [1,1,2,2] and [4,4,5,5,5]. The maximum length subarray has  elements.
+// *************************************************************************************************************************************************************
+
+// PSUEDOCODE
+
+//     PARAMETERS 
+//         a = an array of integers
+
+//     VARIABLES
+//         newArrayOne = first new array made of integers that meet our criteria
+
+//     loop the a array and compare the currentValue with the nextValue
+//         if (abs(currentValue - nextValue <= 1))
+//             push currentValue to newArrayOne
+        
+
+
+
+// function pickingNumbers(a) {
+//     let newArrayOne = []
+
+//     for (let i = 0; i < a.length; i++) {
+//         let previousValue = a[i-1]
+//         let currentValue = a[i];
+//         let nextValue = a[i + 1]
+//         if (Math.abs(currentValue - nextValue <= 1) || Math.abs(currentValue - previousValue <= 1)) {
+            
+//             if (currentValue - previousValue > 1) {
+//                 console.log(`currentValue: ${currentValue}`)
+//                 break;
+//             }
+//             newArrayOne.push(currentValue)
+//         }
+//     }
+//     console.log(`newArrayOne: ${newArrayOne}`)    
+// }
+            
+// pickingNumbers([1,1,2,2,4,4,5,5,5])
+
+function pickingNumbers(a) {
+    
+}
