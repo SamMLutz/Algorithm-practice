@@ -530,14 +530,14 @@
 //             loop over drives and add each to the first loops current value and push to the combinations array
 
 //     compare each index of the combinations array to b and pinpoint which is < b with the lowest abs difference
-    
-    
+
+
 // function getMoneySpent(b, keyBoards, drives) {
 //     let combinations = [];
 //     let total;
 //     let bestCaseTotal = 0;
 //     keyBoards.forEach(item => {
-        
+
 //         drives.forEach(drive => {
 //             console.log(`item: ${item}`)
 //             console.log(`drive: ${drive}`)
@@ -579,7 +579,7 @@
 //     loop the a array and compare the currentValue with the nextValue
 //         if (abs(currentValue - nextValue <= 1))
 //             push currentValue to newArrayOne
-        
+
 
 
 
@@ -591,7 +591,7 @@
 //         let currentValue = a[i];
 //         let nextValue = a[i + 1]
 //         if (Math.abs(currentValue - nextValue <= 1) || Math.abs(currentValue - previousValue <= 1)) {
-            
+
 //             if (currentValue - previousValue > 1) {
 //                 console.log(`currentValue: ${currentValue}`)
 //                 break;
@@ -601,9 +601,82 @@
 //     }
 //     console.log(`newArrayOne: ${newArrayOne}`)    
 // }
-            
+
 // pickingNumbers([1,1,2,2,4,4,5,5,5])
 
-function pickingNumbers(a) {
-    
+// function pickingNumbers(a) {
+
+// }
+
+
+// *************************************************************************************************************************************************************
+// Return the lowest index at which a value (second argument) should be inserted into an array (first argument) once it has been sorted. 
+// The returned value should be a number.
+// *************************************************************************************************************************************************************
+
+// PSEUDOCODE
+
+//     PARAMETERS 
+//         arr = an array of numbers 
+//         num = num to be placed in arr
+
+//     sort the array  
+//         arr.sort()
+
+//     loop thru the arr   
+//         if (previousValue < num && nextValue > num) {
+
+//         }
+
+
+//     VARIABLES 
+//         previousValue = arr[i-1];
+//         nextvalue = arr[i+1];
+
+
+function getIndexToIns(arr, num) {
+    arr.sort(function(a,b){
+        return a -b;
+    })
+    console.log(arr)
+
+    if (arr.length === 0) {
+        console.log(`answer: 0`)
+        return 0;
+    }
+
+    for (let i = 0; i <arr.length; i++) {
+        let previousValue = arr[i-1];
+        let currentValue = arr[i]
+        let nextValue = arr[i+1];
+        let lastNum = arr[arr.length -1]
+        console.log(`previousValue: ${previousValue}`)
+        console.log(`currentValue: ${ currentValue}`)
+        console.log(`lastNum: ${lastNum}`)
+        console.log("############")
+
+ 
+
+        if (num <= arr[0]) {
+            console.log(`answer: 0`)
+            return 0;
+        }
+
+        if (previousValue < num && currentValue >= num) {
+            
+            let indexToIns = arr.indexOf(currentValue)
+            console.log(`Insert at: ${indexToIns}`)
+            return indexToIns
+        }
+
+        if (num > lastNum) {
+            console.log(`insert at: ${arr.indexOf(lastNum) + 1}`)
+            return arr.indexOf(lastNum) + 1
+        }
+    }
 }
+
+// getIndexToIns([10,20,30,40,50], 35)
+// getIndexToIns([3, 10, 5], 3)
+// getIndexToIns([2, 5, 10], 15)
+getIndexToIns([], 1)
