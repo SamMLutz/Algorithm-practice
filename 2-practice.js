@@ -1,3 +1,4 @@
+
 // *************************************************************************************************************************************************************
 // given a number, find its opposite.
 // *************************************************************************************************************************************************************
@@ -634,49 +635,93 @@
 //         nextvalue = arr[i+1];
 
 
-function getIndexToIns(arr, num) {
-    arr.sort(function(a,b){
-        return a -b;
-    })
-    console.log(arr)
+// function getIndexToIns(arr, num) {
+//     arr.sort(function(a,b){
+//         return a -b;
+//     })
+//     console.log(arr)
 
-    if (arr.length === 0) {
-        console.log(`answer: 0`)
-        return 0;
-    }
+//     if (arr.length === 0) {
+//         console.log(`answer: 0`)
+//         return 0;
+//     }
 
-    for (let i = 0; i <arr.length; i++) {
-        let previousValue = arr[i-1];
-        let currentValue = arr[i]
-        let nextValue = arr[i+1];
-        let lastNum = arr[arr.length -1]
-        console.log(`previousValue: ${previousValue}`)
-        console.log(`currentValue: ${ currentValue}`)
-        console.log(`lastNum: ${lastNum}`)
-        console.log("############")
+//     for (let i = 0; i <arr.length; i++) {
+//         let previousValue = arr[i-1];
+//         let currentValue = arr[i]
+//         let nextValue = arr[i+1];
+//         let lastNum = arr[arr.length -1]
+//         console.log(`previousValue: ${previousValue}`)
+//         console.log(`currentValue: ${ currentValue}`)
+//         console.log(`lastNum: ${lastNum}`)
+//         console.log("############")
 
  
 
-        if (num <= arr[0]) {
-            console.log(`answer: 0`)
-            return 0;
-        }
+//         if (num <= arr[0]) {
+//             console.log(`answer: 0`)
+//             return 0;
+//         }
 
-        if (previousValue < num && currentValue >= num) {
+//         if (previousValue < num && currentValue >= num) {
             
-            let indexToIns = arr.indexOf(currentValue)
-            console.log(`Insert at: ${indexToIns}`)
-            return indexToIns
-        }
+//             let indexToIns = arr.indexOf(currentValue)
+//             console.log(`Insert at: ${indexToIns}`)
+//             return indexToIns
+//         }
 
-        if (num > lastNum) {
-            console.log(`insert at: ${arr.indexOf(lastNum) + 1}`)
-            return arr.indexOf(lastNum) + 1
-        }
-    }
-}
+//         if (num > lastNum) {
+//             console.log(`insert at: ${arr.indexOf(lastNum) + 1}`)
+//             return arr.indexOf(lastNum) + 1
+//         }
+//     }
+// }
 
 // getIndexToIns([10,20,30,40,50], 35)
 // getIndexToIns([3, 10, 5], 3)
 // getIndexToIns([2, 5, 10], 15)
-getIndexToIns([], 1)
+// getIndexToIns([], 1)
+
+
+// *************************************************************************************************************************************************************
+// Return true if the string in the first element of the array contains all of the letters of the string in the second element of the array.
+// *************************************************************************************************************************************************************
+
+// PSEUDOCODE
+
+//     PARAMETERS 
+//         strOne = a string of letters
+//         strTwo = a second string of letters
+
+//     split strOne and strTwo into arrays and make them all lowercase
+//         starting with index[0] of strTwo compare against each index of strOne
+                // loop strTwoArr 
+                //     if (string includes item) 
+                //         log true
+                //     else 
+                //         isTrue = false;
+
+
+// function mutation(arr) {
+//     let isTrue = true;
+//     const strOneArr = arr[0].toLowerCase().split('');
+//     console.log(`strOneArr: ${strOneArr}`)
+//     const strTwoArr = arr[1].toLowerCase().split('');
+//     console.log(`strTwoArr: ${strTwoArr}`)
+
+//     strTwoArr.forEach(item => {
+//         if (strOneArr.includes(item)) {
+//             console.log(true)
+            
+//         }
+//         else {
+//             isTrue = false
+//             console.log(false)
+//         }
+//     })
+//     return isTrue;
+//   }
+  
+
+// mutation(["Hello", "Hey"]); 
+// console.log(mutation(["Hello", "Hey"]))
