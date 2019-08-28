@@ -656,7 +656,7 @@
 //         console.log(`lastNum: ${lastNum}`)
 //         console.log("############")
 
- 
+
 
 //         if (num <= arr[0]) {
 //             console.log(`answer: 0`)
@@ -664,7 +664,7 @@
 //         }
 
 //         if (previousValue < num && currentValue >= num) {
-            
+
 //             let indexToIns = arr.indexOf(currentValue)
 //             console.log(`Insert at: ${indexToIns}`)
 //             return indexToIns
@@ -695,11 +695,11 @@
 
 //     split strOne and strTwo into arrays and make them all lowercase
 //         starting with index[0] of strTwo compare against each index of strOne
-                // loop strTwoArr 
-                //     if (string includes item) 
-                //         log true
-                //     else 
-                //         isTrue = false;
+// loop strTwoArr 
+//     if (string includes item) 
+//         log true
+//     else 
+//         isTrue = false;
 
 
 // function mutation(arr) {
@@ -712,7 +712,7 @@
 //     strTwoArr.forEach(item => {
 //         if (strOneArr.includes(item)) {
 //             console.log(true)
-            
+
 //         }
 //         else {
 //             isTrue = false
@@ -721,7 +721,67 @@
 //     })
 //     return isTrue;
 //   }
-  
+
 
 // mutation(["Hello", "Hey"]); 
 // console.log(mutation(["Hello", "Hey"]))
+
+
+// *************************************************************************************************************************************************************
+// Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
+// *************************************************************************************************************************************************************
+
+// PSEUDOCODE
+
+//     parameters 
+//         arr = array to be split 
+//         size = integer to represent the size of each new array
+
+
+// function chunkArrayInGroups(arr, size) {
+//     // Break it up.
+//     let newArr = arr.slice(0, size)
+//     console.log(newArr)
+//     console.log(`arr: ${arr}`)
+//     let thirdArr = arr.slice(size, size * 2)
+//     console.log("thirdArr: ", thirdArr)
+//     return arr;
+// }
+
+// function chunkArrayInGroups(arr, size) {
+//     // Break it up.
+//     let finalArr = [];
+//     let firstArr = arr.splice(0, size)
+//     console.log("firstArr: ", firstArr)
+//     finalArr.push(firstArr)
+//     console.log("arr: ", arr)
+    
+//     if (arr.length > size) {
+//         let secondArr = arr.splice(0, size);
+//         finalArr.push(secondArr)
+//     }
+    
+//     finalArr.push(arr);
+//     console.log("finalArr: ", finalArr)
+//     return finalArr
+// }
+
+function chunkArrayInGroups(arr, size) {
+    const finalArr = [];
+  
+    do {
+      let newArr = arr.splice(0, size)
+      finalArr.push(newArr)
+    } while (arr.length >= size)
+  
+    if (arr.length > 0) {
+    finalArr.push(arr)
+    
+    }
+    console.log("finalArr: ", finalArr)
+    return finalArr;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+// chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)
+// chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)
