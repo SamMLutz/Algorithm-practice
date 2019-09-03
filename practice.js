@@ -1375,42 +1375,40 @@
 //         else
 //           log (err)
 
+// function migratoryBirds(arr) {
+//   const birdTypes = [0, 0, 0, 0, 0];
+//   let mostSightings = 0;
+//   let mostSighted;
 
-function migratoryBirds(arr) {
-  const birdTypes = [0, 0, 0, 0, 0];
-  let mostSightings = 0;
-  let mostSighted;
+//   arr.forEach(item => {
+//     if (item === 1) {
+//       birdTypes[0] += 1;
+//     }
+//     else if (item === 2) {
+//       birdTypes[1] += 1;
+//     }
+//     else if (item === 3) {
+//       birdTypes[2] += 1;
+//     }
+//     else if (item === 4) {
+//       birdTypes[3] += 1;
+//     }
+//     else if (item === 5) {
+//       birdTypes[4] += 1;
+//     }
+//     console.log(birdTypes)
+//   })
+//   console.log(birdTypes)
 
-  arr.forEach(item => {
-    if (item === 1) {
-      birdTypes[0] += 1;
-    }
-    else if (item === 2) {
-      birdTypes[1] += 1;
-    }
-    else if (item === 3) {
-      birdTypes[2] += 1;
-    }
-    else if (item === 4) {
-      birdTypes[3] += 1;
-    }
-    else if (item === 5) {
-      birdTypes[4] += 1;
-    }
-    console.log(birdTypes)
-  })
-  console.log(birdTypes)
-
-  birdTypes.forEach(item => {
-    if (item > mostSightings) {
-      mostSightings = item
+//   birdTypes.forEach(item => {
+//     if (item > mostSightings) {
+//       mostSightings = item
       
-    }
+//     }
     
-  })
-  
-  console.log(mostSightings)
-  console.log(`mostSighted: ${mostSighted}`)
-}
+//   })
+//   console.log(mostSightings)
+//   console.log(`mostSighted: ${mostSighted}`)
+// }
 
-migratoryBirds([1, 3, 3, 2, 2])
+// migratoryBirds([1, 3, 3, 2, 2])

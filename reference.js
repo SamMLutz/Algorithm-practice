@@ -71,13 +71,26 @@
 
 // console.log("finalArr: ", finalArr)
 
-let dog = {
-  name: "Spot",
-  numLegs: 4,
-  sayLegs: function() {
-    return "This dog has " + dog.numLegs + " legs."
-  }
-};
+// let dog = {
+//   name: "Spot",
+//   numLegs: 4,
+//   sayLegs: function() {
+//     return "This dog has " + dog.numLegs + " legs."
+//   }
+// };
 
-dog.sayLegs();
+// dog.sayLegs();
+
+// function Bird() {
+ 
+//   let weight = 10;
+
+//   this.getWeight = function() {
+//   return weight
+//   };
+// }
+
+//  let ducky = new Bird();
+//  console.log(ducky.getWeight())
+
 

@@ -766,22 +766,22 @@
 //     return finalArr
 // }
 
-function chunkArrayInGroups(arr, size) {
-    const finalArr = [];
+// function chunkArrayInGroups(arr, size) {
+//     const finalArr = [];
   
-    do {
-      let newArr = arr.splice(0, size)
-      finalArr.push(newArr)
-    } while (arr.length >= size)
+//     do {
+//       let newArr = arr.splice(0, size)
+//       finalArr.push(newArr)
+//     } while (arr.length >= size)
   
-    if (arr.length > 0) {
-    finalArr.push(arr)
+//     if (arr.length > 0) {
+//     finalArr.push(arr)
     
-    }
-    console.log("finalArr: ", finalArr)
-    return finalArr;
-}
+//     }
+//     console.log("finalArr: ", finalArr)
+//     return finalArr;
+// }
 
-chunkArrayInGroups(["a", "b", "c", "d"], 2);
+// chunkArrayInGroups(["a", "b", "c", "d"], 2);
 // chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)
 // chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)
