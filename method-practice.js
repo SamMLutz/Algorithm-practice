@@ -1187,8 +1187,8 @@ var watchList = [
 // Recall from prior challenges how to filter data and map over it to pull what you need. You may need to create other variables, but save the final average into the variable averageRating. 
 // Note that the rating values are saved as strings in the object and need to be converted into numbers before they are used in any mathematical operations.
 
-const newArr = watchList.filter(item => item.Director === "Christopher Nolan").map(item => parseFloat(item.imdbRating)).reduce((acc, cur,) => acc + cur) / watchList.filter(item => item.Director === "Christopher Nolan").length;
-console.log("newArr: ", newArr)
+// const newArr = watchList.filter(item => item.Director === "Christopher Nolan").map(item => parseFloat(item.imdbRating)).reduce((acc, cur,) => acc + cur) / watchList.filter(item => item.Director === "Christopher Nolan").length;
+// console.log("newArr: ", newArr)
 
 // const ratings = watchList.map(item => {
 //     return  `${item.Title}: ${parseFloat(item.imdbRating)}`
@@ -1218,3 +1218,83 @@ console.log("newArr: ", newArr)
 
 // var averageRating = watchList.filter(x => x.Director === "Christopher Nolan").map(x => Number(x.imdbRating)).reduce((x1, x2) => x1 + x2) / watchList.filter(x => x.Director === "Christopher Nolan").length;
 // // *************************************************************************************************************************************************************
+
+
+// Functional Programming: Return a Sorted Array Without Changing the Original Array
+// // *************************************************************************************************************************************************************
+// A side effect of the sortmethod is that it changes the order of the elements in the original array. In other words, it mutates the array in place. 
+// One way to avoid this is to first concatenate an empty array to the one being sorted (remember that concatreturns a new array), then run the sortmethod.
+
+// Use the sortmethod in the nonMutatingSortfunction to sort the elements of an array in ascending order. The function should return a new array, and not mutate the globalArrayvariable.
+
+// var globalArray = [5, 6, 3, 2, 9];
+// function nonMutatingSort(arr) {
+//   // Add your code below this line
+//   return arr.sort(function(a,b) {
+//      console.log("array: ", arr)
+//          return a > b;
+//        });
+  
+//   // Add your code above this line
+// }
+
+// console.log(nonMutatingSort(globalArray));
+
+// function alphabeticalOrder(arr) {
+//    // Add your code below this line
+//    const sortArr = arr.sort((a, b) => {
+//      return a > b;
+//    });
+ 
+//    console.log(sortArr);
+ 
+//    return sortArr;
+   
+//    // Add your code above this line
+// }
+
+// alphabeticalOrder(["a","g","c","b"])
+
+// function reverseAlpha(arr) {
+//    return arr.sort(function(a, b) {
+//      return a > b ? 1 : -1;
+//    });
+//  }
+
+// console.log(reverseAlpha(['b','n','a','j']));
+// console.log(reverseAlpha([4,7,2,1]));
+
+// var globalArray = [5, 6, 3, 2, 9];
+
+// function nonMutatingSort(arr) {
+//   // Add your code below this line
+//   return [].concat(arr).sort(function(a, b) {
+//     return a - b;
+//   });
+//   // Add your code above this line
+// }
+// nonMutatingSort(globalArray);
+
+// const sortedArr = nonMutatingSort(globalArray);
+
+// console.log(sortedArr)
+
+
+var str = "Hello World";
+var bySpace = str.split(" ");
+// Sets bySpace to ["Hello", "World"]
+
+var otherString = "How9are7you2today";
+var byDigits = otherString.split(/\d/);
+// Sets byDigits to ["How", "are", "you", "today"]
+
+function splitify(str) {
+   // Add your code below this line
+   const arr = str.split(" ")
+    return arr
+   // Add your code above this line
+ }
+ 
+const newArr = splitify("Hello World,I-am code");
+
+console.log(newArr)
