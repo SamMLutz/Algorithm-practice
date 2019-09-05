@@ -934,10 +934,209 @@
 // \S — Match a non whitespace character.
 // *************************************************************************************************************************************************************
 
+// Quantifiers: — Quantifiers are symbols that have a special meaning in a regular expression.
+// *************************************************************************************************************************************************************
+// + —Matches the preceding expression 1 or more times.
 
+// var regex = /\d+/;
+// console.log(regex.test('8'));
+// // true
+// console.log(regex.test('88899'));
+// // true
+// console.log(regex.test('8888845'));
+// // true
+// *************************************************************************************************************************************************************
 
+// * —Matches the preceding expression 0 or more times.
+// *************************************************************************************************************************************************************
+// var regex = /go*d/;
+// console.log(regex.test('gd'));
+// // true
+// console.log(regex.test('god'));
+// // true
+// console.log(regex.test('good'));
+// // true
+// console.log(regex.test('goood'));
+// // true
+// *************************************************************************************************************************************************************
 
+// ? — Matches the preceding expression 0 or 1 time, that is preceding pattern is optional.
+// // *************************************************************************************************************************************************************
+// var regex = /goo?d/;
+// console.log(regex.test('god'));
+// // true
+// console.log(regex.test('good'));
+// // true
+// console.log(regex.test('goood'));
+// false
+// *************************************************************************************************************************************************************
 
+// ^ — Matches the beginning of the string, the regular expression that follows it should be at the start of the test string. i.e the caret (^) matches the start of string.
+// // *************************************************************************************************************************************************************
+// var regex = /^g/;
+// console.log(regex.test('good'));
+// // true
+// console.log(regex.test('bad'));
+// // false
+// console.log(regex.test('tag'));
+// // false
+// // *************************************************************************************************************************************************************
+
+// $ — Matches the end of the string, that is the regular expression that precedes it should be at the end of the test string. The dollar ($) sign matches the end of the string.
+// *************************************************************************************************************************************************************
+// var regex = /.com$/;
+// console.log(regex.test('test@testmail.com'));
+// // true
+// console.log(regex.test('test@testmail'));
+// false
+// *************************************************************************************************************************************************************
+
+// {N} — Matches exactly N occurrences of the preceding regular expression.
+// *************************************************************************************************************************************************************
+// var regex = /go{2}d/;
+// console.log(regex.test('good'));
+// true
+// console.log(regex.test('god'));
+// false
+// *************************************************************************************************************************************************************
+
+// {N,} — Matches at least N occurrences of the preceding regular expression.
+// *************************************************************************************************************************************************************
+// var regex = /go{2,}d/;
+// console.log(regex.test('good'));
+// true
+// console.log(regex.test('goood'));
+// true
+// console.log(regex.test('gooood'));
+// true
+// *************************************************************************************************************************************************************
+
+// {N,M} — Matches at least N occurrences and at most M occurrences of the preceding regular expression (where M > N).
+// *************************************************************************************************************************************************************
+// var regex = /go{1,2}d/;
+// console.log(regex.test('god'));
+// true
+// console.log(regex.test('good'));
+// true
+// console.log(regex.test('goood'));
+// false
+// *************************************************************************************************************************************************************
+
+// Alternation X|Y — Matches either X or Y. For example:
+// *************************************************************************************************************************************************************
+// var regex = /(green|red) apple/;
+// console.log(regex.test('green apple'));
+// true
+// console.log(regex.test('red apple'));
+// true
+// console.log(regex.test('blue apple'));
+// false
+// *************************************************************************************************************************************************************
+
+// *************************************************************************************************************************************************************
+// Advanced
+// *************************************************************************************************************************************************************
+
+// (x) — Matches x and remembers the match. These are called capturing groups. This is also used to create sub expressions within a regular expression. For example :-
+// var regex = /(foo)bar\1/;
+// console.log(regex.test('foobarfoo'));
+// // true
+// console.log(regex.test('foobar'));
+// // false
+
+// \1 remembers and uses that match from first subexpression within parentheses.
+// // *************************************************************************************************************************************************************
+
+// (?:x) — Matches x and does not remember the match. These are called non capturing groups. Here \1 won’t work, it will match the literal \1.
+// var regex = /(?:foo)bar\1/;
+// console.log(regex.test('foobarfoo'));
+// // false
+// console.log(regex.test('foobar'));
+// // false
+// console.log(regex.test('foobar\1'));
+// // true
+// // *************************************************************************************************************************************************************
+
+// x(?=y) — Matches x only if x is followed by y. Also called positive look ahead. For example:
+// var regex = /Red(?=Apple)/;
+// console.log(regex.test('RedApple'));
+// // true
+
+// In the above example, match will occur only if Redis followed by Apple.
+// *************************************************************************************************************************************************************
+
+// Practicing Regex:
+// Let’s practice some of the concepts that we have learned above.
+// // *************************************************************************************************************************************************************
+// Match any 10 digit number :
+// var regex = /^\d{10}$/;
+// console.log(regex.test('9995484545'));
+// // true
+
+// Let’s break that down and see what’s going on up there.
+
+// 1. If we want to enforce that the match must span the whole string, we can add the quantifiers ^ and $. The caret ^ matches the start of the input string, whereas the dollar sign $ matches the end. 
+// So it would not match if string contain more than 10 digits.
+
+// 2. \d matches any digit character.
+
+// 3. {10} matches the previous expression, in this case \d exactly 10 times. So if the test string contains less than or more than 10 digits, the result will be false.
+// *************************************************************************************************************************************************************
+
+// Match a date with following format DD-MM-YYYY or DD-MM-YY
+// // *************************************************************************************************************************************************************
+// var regex = /^(\d{1,2}-){2}\d{2}(\d{2})?$/;
+// console.log(regex.test('01-01-1990'));
+// // true
+// console.log(regex.test('01-01-90'));
+// // true
+// console.log(regex.test('01-01-190'));
+// // false
+// Let’s break that down and see what’s going on up there.
+
+// 1. Again, we have wrapped the entire regular expression inside ^ and $, so that the match spans entire string.
+
+// 2.( start of first subexpression.
+
+// 3. \d{1,2} matches at least 1 digit and at most 2 digits.
+
+// 4. - matches the literal hyphen character.
+
+// 5. ) end of first subexpression.
+
+// 6. {2} match the first subexpression exactly two times.
+
+// 7. \d{2} matches exactly two digits.
+
+// 8. (\d{2})? matches exactly two digits. But it’s optional, so either year contains 2 digits or 4 digits.
+// *************************************************************************************************************************************************************
+
+// Matching Anything But a Newline
+// The expression should match any string with a format like abc.def.ghi.jkl where each variable a, b, c, d, e, f, g, h, i, j, k, l can be any character except new line.
+// *************************************************************************************************************************************************************
+// var regex = /^(.{3}\.){3}.{3}$/;
+// console.log(regex.test('123.456.abc.def'));
+// true
+// console.log(regex.test('1243.446.abc.def'));
+// false
+// console.log(regex.test('abc.def.ghi.jkl'));
+// true
+
+// Let’s break that down and see what’s going on up there.
+
+// 1. We have wrapped entire regular expression inside ^ and $, so that the match spans entire string.
+
+// 2. ( start of first sub expression
+
+// 3. .{3} matches any character except new line for exactly 3 times.
+
+// 4. \. matches the literal . period
+
+// 5. ) end of first sub expression
+
+// 6. {3} matches the first sub expression exactly 3 times.
+
+// 7. .{3} matches any character except new line for exactly 3 times.
 
 
 // var str = "Hello World";
@@ -959,3 +1158,45 @@
 
 // console.log(newArr)
 
+// function splitify(str) {
+//    // Add your code below this line
+//    console.log(str.split(/\W/))
+//    return str.split(/\W/);
+//    // Add your code above this line
+//  }
+//  splitify("Hello World,I-am code");
+
+// function sentensify(str) {
+//    // Add your code below this line
+//    console.log(str.split(/\W/))
+//    const sentenceArr = str.split(/\W/)
+   
+//    console.log(sentenceArr.join(" "))
+//    // Add your code above this line
+//    return sentenceArr.join(" ")
+//  }
+//  sentensify("May-the-force-be-with-you");
+
+// the global variable
+// var globalTitle = " Winter Is  Coming";
+
+// // Add your code below this line
+// function urlSlug(title) {
+   
+//    const lowCase = title.toLowerCase().trim().split(/\s+/).join('-')
+//    console.log(lowCase)
+//    return lowCase;
+// }
+
+// // Add your code above this line
+
+// var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
+
+// console.log(globalTitle.toLowerCase().trim().split(/\s+/).join('-'))
+
+// function checkPositive(arr) {
+//    // Add your code below this line
+//    return arr.every(item => item > 0);
+//    // Add your code above this line
+//  }
+//  console.log(checkPositive([1, 2, 3, -4, 5]));
