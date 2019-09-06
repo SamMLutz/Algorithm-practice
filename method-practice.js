@@ -2,7 +2,6 @@
 // .map() is used to apply a function on every element in an array. A new array is then returned.
 // *************************************************************************************************************************************************************
 
-
 // syntax example
 // let newArr = oldArr.map((val, index, arr) => {
 //     // return element to new Array

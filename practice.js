@@ -1412,3 +1412,61 @@
 // }
 
 // migratoryBirds([1, 3, 3, 2, 2])
+
+// *************************************************************************************************************************************************************
+// write a function called uniqueVals that will return an array of unique values, no duplicates allowed. 
+// It will accept two arguments, first is the length of the array, second is the max value
+// *************************************************************************************************************************************************************
+
+    // parameters 
+    //     arrLength = length of the given array 
+    //     maxVal = given max Value 
+
+    // variables
+    //     newArr = [];
+
+    // functions
+
+    // do while loop until newArr.length = 5
+
+    //     generate a random number between one and maxVal
+
+    //     check if randomNumber is in the newArr 
+    //         if (randomNumber === index of newArr)$
+    //             log "already in arry"
+    //          else 
+    //             push randomNumber to new array 
+
+    
+// const uniqueVals = function(arrLength, maxValue) {
+//     let newArr = []
+
+//     do {
+//         let randomNumber = Math.floor(Math.random() * maxValue) + 1;
+
+//         if (newArr.includes(randomNumber)) {
+//             console.log("already in newArr")
+//         }
+//         else {
+//             newArr.push(randomNumber)
+//         }
+
+//     }
+//     while (newArr.length < arrLength )
+//     console.log("newArr: ", newArr)
+// }
+
+// uniqueVals(5,10) 
+// newArr:  [ 4, 2, 3, 6, 10, 9 ]
+
+// const uniqueValsTwo = function(length, value) {
+//     const newArr = [];
+
+//     for (let i = 1; i <= length; i++) {
+//         let newValue = value - i;
+//         newArr.push(newValue)
+//     }
+//     console.log("newArr: ", newArr)
+// }
+
+// uniqueValsTwo(5, 10)
