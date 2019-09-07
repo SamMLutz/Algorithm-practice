@@ -21,47 +21,47 @@
 //             add 1 to arr[0] and push that number to a rangeArr
 
 
-function sumAll(arr) {
-    const sumEach = function(arr) {
-        let sum = 0;
-        arr.forEach(item => sum += item);
-        return sum;
-    }
+// function sumAll(arr) {
+//     const sumEach = function(arr) {
+//         let sum = 0;
+//         arr.forEach(item => sum += item);
+//         return sum;
+//     }
 
-    const sortedArr = arr.sort(function(a, b){return a-b});
-    console.log("sortedArr: ", sortedArr)
+//     const sortedArr = arr.sort(function(a, b){return a-b});
+//     console.log("sortedArr: ", sortedArr)
 
-    const absDiff = Math.abs(arr[0] - arr[1])
-    console.log("absDiff: ", absDiff)
+//     const absDiff = Math.abs(arr[0] - arr[1])
+//     console.log("absDiff: ", absDiff)
 
-    let firstSum = sumEach(arr)
-    console.log("firstSum: ", firstSum)
-    
-    let lowNum = sortedArr[0];
-    let highNum = sortedArr[1];
-    console.log("lowNum before: ", lowNum)
-    console.log("highNum before: ", highNum)
-    
-    let rangeArr = []
+//     let firstSum = sumEach(arr)
+//     console.log("firstSum: ", firstSum)
 
-    do {
-        lowNum += 1;
-        rangeArr.push(lowNum)
-    }
-    while (rangeArr.length < absDiff - 1)
+//     let lowNum = sortedArr[0];
+//     let highNum = sortedArr[1];
+//     console.log("lowNum before: ", lowNum)
+//     console.log("highNum before: ", highNum)
 
-    console.log("lowNum after: ", lowNum)
-    console.log("rangeArr: ", rangeArr)
+//     let rangeArr = []
 
-    const secondSum = sumEach(rangeArr)
-    console.log("secondSum: ", secondSum)
-    
-    console.log("answer: ", firstSum + secondSum)
-    return firstSum + secondSum;
-}
-    
+//     do {
+//         lowNum += 1;
+//         rangeArr.push(lowNum)
+//     }
+//     while (rangeArr.length < absDiff - 1)
+
+//     console.log("lowNum after: ", lowNum)
+//     console.log("rangeArr: ", rangeArr)
+
+//     const secondSum = sumEach(rangeArr)
+//     console.log("secondSum: ", secondSum)
+
+//     console.log("answer: ", firstSum + secondSum)
+//     return firstSum + secondSum;
+// }
+
 // sumAll([4, 1]);
-sumAll([10, 5])
+// sumAll([10, 5])
 
 // other solutions
 
@@ -104,5 +104,86 @@ sumAll([10, 5])
 // sumAll([1, 4]);
 
 
+// *************************************************************************************************************************************************************
+// Intermediate Algorithm Scripting: Diff Two Arrays
+// Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
+// *************************************************************************************************************************************************************
 
+// PSEUDOCODE
 
+//     PARAMETERS 
+//         arr1 = first given array 
+//         arr2 = second given array 
+
+//     VARIABLES   
+//         newArr = result to return 
+
+//     check the length of each array and loop over the larger of the two first
+
+//     loop over arr 1 
+//         if (item === inddex of arr 2)
+//             log "in arr2"
+//         else 
+//             push item to newArr
+
+// IMPERATIVE SOLUTIONS
+// *************************************************************************************************************************************************************
+
+// function diffArray(arr1, arr2) {
+//     let newArr = []
+//     const checkArr = (arrOne, arrTwo) => {
+
+//         arrOne.forEach(item => {
+//             if (arrTwo.indexOf(item) > -1) {
+//                 console.log("already in arr")
+//             }
+//             else {
+//                 newArr.push(item)
+//             }
+//         })
+//         return newArr;
+//     }
+
+//     if (arr1.length > arr2.length) {
+//         checkArr(arr1, arr2)
+//         checkArr(arr2, arr1)
+//     }
+//     else {
+//         checkArr(arr1, arr2)
+//         checkArr(arr2, arr1)
+//     }
+//     return newArr;
+// }
+
+// function diffArray(arr1, arr2) {
+//     var newArr = [];
+    
+//     const checkArr = (arrOne, arrTwo) => {
+//         arrOne.forEach(item => {
+//             if (arrTwo.indexOf(item) === -1) {
+//                 newArr.push(item)
+//             }
+//         })
+//         return newArr;
+//     }
+//     checkArr(arr1, arr2);
+//     checkArr(arr2, arr1);
+
+//     return newArr;
+// }
+
+// DECLARATVIE SOLUTIONS
+// *************************************************************************************************************************************************************
+
+// function diffArray(arr1, arr2) {
+//     return arr1
+//         .concat(arr2)
+//         .filter(
+//             item => !arr1.includes(item) || !arr2.includes(item)
+//         )
+// }
+
+// diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+// diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"])
+const answer = diffArray(["andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"])
+console.log(answer)

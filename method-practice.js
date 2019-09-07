@@ -67,6 +67,136 @@
 // var newArr = ages.filter(item => item < 33)
 // console.log(`newArr = ${newArr}`);
 
+// *************************************************************************************************************************************************************
+// REDUCE EXAMPLES
+// *************************************************************************************************************************************************************
+
+// const myArray = [100, 200, 300];
+
+// // Function which is going to sum all numbers in an array
+// const sumCallbackFunction = function (accumulator, currentElement) {
+//     // For each element, create a new sum which is the previous sum + the current element
+//     const newSum = currentElement + accumulator;
+//     // Return the new sum for the next element
+//     return newSum;
+// };
+
+// const sum = myArray.reduce(
+//     sumCallbackFunction,
+//     0 /* The initial value */
+// );
+
+// console.log(sum); // Prints 600
+
+// *************************************************************************************************************************************************************
+
+// Initial array of people with wrong first names
+// const people = [
+//     { firstName: 'michael', lastName: 'Scott' },
+//     { firstName: 'jim', lastName: 'Halpert' },
+//     { firstName: 'dwight', lastName: 'Schrute' }
+// ];
+
+// // Callback function which will fix the first name of each person
+// const fixFirstNameCallbackFunction = function (accumulator, currentElement) {
+//     // Generate a correct person object by changing the first letter of the first name
+//     const fixedPerson = {
+//         ...currentElement,
+//         firstName:
+//             currentElement.firstName.charAt(0).toUpperCase() +
+//             currentElement.firstName.slice(1)
+//     };
+
+//     // Return the value for the next step by using the array from the previous step and
+//     // add the new fixed person
+//     return [...accumulator, fixedPerson];
+// };
+
+// // Use the callback function in the reduce function
+// const fixedPeople = people.reduce(
+//     fixFirstNameCallbackFunction,
+//     [] // Initial value is an empty array which will be filled with the corrected people
+// );
+
+// console.dir(fixedPeople);
+
+// *************************************************************************************************************************************************************
+// map function built with reduce()
+// *************************************************************************************************************************************************************
+
+// const people = ['Andy', 'Terry', 'Amy'];
+
+// // A generic map function which will apply a function to each element
+// const mapFunction = function(array, mapFn) {
+//     // The reduce function should generate an array with the same amount of elements
+//     return array.reduce(function(accumulator, currentValue) {
+//         // The entering map function will be applied to each element
+//         const mappedValue = mapFn(currentValue);
+
+//         // The new mapped value will be added to the ever growing array
+//         return [...accumulator, mappedValue];
+//     }, []);
+// };
+
+// // A simple function which will be applied to each element
+// const addTheGreat = function(element) {
+//     return `The great ${element}`;
+// };
+
+// const theGreatPeople = mapFunction(people, addTheGreat);
+
+// // The output of these logs should be the same:
+// // [ 'The great Andy', 'The great Terry', 'The great Amy' ]
+// console.log(theGreatPeople);
+// console.log(people.map(addTheGreat));
+// *************************************************************************************************************************************************************
+
+// const data = [115, 26, 99];
+
+// const callbackFunction = function(
+//     accumulator,
+//     currentElement,
+//     currentIndex,
+//     array
+// ) {
+//     // Get the maximum by checking first if there is a maximum from the previous step
+//     const maximum = accumulator.maximum
+//         ? // If there is, then check if the current element is higher than the previous maximum
+//           accumulator.maximum < currentElement
+//             ? currentElement
+//             : accumulator.maximum
+//         : // If there isn't, use the current element right away
+//           currentElement;
+
+//     // Get the minimum by checking first if there is a minimum from the previous step
+//     const minimum = accumulator.minimum
+//         ? // If there is, then check if the current element is lower than the previous maximum
+//           accumulator.minimum > currentElement
+//             ? currentElement
+//             : accumulator.minimum
+//         : // If there isn't, use the current element right away
+//           currentElement;
+
+//     // Get the average by checking if we're at the last step (where it we can finally calculate the average)
+//     const average =
+//         currentIndex === array.length - 1
+//             ? (accumulator.average + currentElement) / array.length
+//             : // If we're not at the last step, check if there even is a value from the previous step
+//             accumulator.average
+//                 ? accumulator.average + currentElement
+//                 : currentElement;
+
+//     // Return the value for the next element
+//     return {
+//         maximum,
+//         minimum,
+//         average
+//     };
+// };
+
+// const result = data.reduce(callbackFunction, {});
+// console.log(result); // Returns { maximum: 115, minimum: 26, average: 80 }
+
 
 // *************************************************************************************************************************************************************
 // Math.ceil()
