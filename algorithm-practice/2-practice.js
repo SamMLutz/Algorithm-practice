@@ -785,3 +785,77 @@
 // chunkArrayInGroups(["a", "b", "c", "d"], 2);
 // chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)
 // chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)
+
+
+// *************************************************************************************************************************************************************
+// check to see if a string is a pangram (containing every letter in the alpha at least once)
+// *************************************************************************************************************************************************************
+
+// var test1 = "The quick brown fox jumps over the lazy dog.";
+
+// var isPangram = function(string) {
+
+//   // If the string contains less than 26 letters, it couldn't have all 26 letters of the alphabet
+//   if (string.length < 26) {
+//     return false;
+//   }
+//   else {
+
+//     // Holder for the unique letters found in the sentence
+//     var letterHolder = [];
+
+//     // Make the string lowercase, remove anything that isn't the letters a through z, then split them into an array
+//     var letters = string.toLowerCase().replace(/[^a-z]+/g, "").split("");
+//     console.log("letters: ", letters)
+//     // loop over the letters, if a letter is not found in the letterHolder array, push it in
+//     for (var i = 0; i < letters.length; i++) {
+//       if (letterHolder.indexOf(letters[i]) === -1) {
+//         letterHolder.push(letters[i]);
+//       }
+//     }
+
+//     // Check to see if letterHolder.length contains the 26 letters of the alphabet.
+//     if (letterHolder.length === 26) {
+//       return true;
+//     }
+//     else {
+//       return false;
+//     }
+//   }
+// };
+
+// const answer = isPangram("The quick brown fox jumps over the lazy dog.")
+// console.log(answer)
+
+// *************************************************************************************************************************************************************
+
+// Prime Checker: SOLUTION
+// =======================
+
+// Declare our primeCheck function
+// function primeCheck(number) {
+
+//     // Loop to check to see if a number has divisors other than one and itself.
+//     // Note: Loops from two to one less than the number we're checking.
+//     for (var i = 2; i < number; i++) {
+  
+//       // If the number is evenly divisible
+//       // by a number between two and one less than itself,
+//       // then it is not prime.
+//       if (number % i === 0) {
+  
+//         // So return false.
+//         console.log("false")
+//         return false;
+//       }
+//     }
+  
+//     // A prime number has to be greater than one,
+//     // even if it has a divisor other than one and itself.
+//     return number > 1;
+//   }
+
+// const answer = primeCheck(15);
+// console.log(answer)
+
+// *************************************************************************************************************************************************************
