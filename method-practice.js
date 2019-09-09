@@ -458,6 +458,7 @@
 
 
 // The arguments object is not an Array. It is similar, but does not have any Array properties except length. For example, it does not have the pop() method. However, it can be converted to a real Array:
+// *************************************************************************************************************************************************************
 
 // var args = Array.prototype.slice.call(arguments);
 // // Using an array literal is shorter than above but allocates an empty array
@@ -473,18 +474,18 @@
 // This technique is useful for functions that can be passed a variable number of arguments, such as Math.min(). 
 // This example function accepts any number of string arguments and returns the longest one:
 
-function longestString() {
-  var longest = '';
-  for (var i=0; i < arguments.length; i++) {
-    if (arguments[i].length > longest.length) {
-      longest = arguments[i];
-    }
-  }
-  return longest;
-}
+// function longestString() {
+//   var longest = '';
+//   for (var i=0; i < arguments.length; i++) {
+//     if (arguments[i].length > longest.length) {
+//       longest = arguments[i];
+//     }
+//   }
+//   return longest;
+// }
 
-const longestString = longestString("churp", "yurpydurp", "scuuuuuuuuuuuurp")
-console.log(longestString)
+// const longestString = longestString("churp", "yurpydurp", "scuuuuuuuuuuuurp")
+// console.log(longestString)
 
 // You can use arguments.length to count how many arguments the function was called with. 
 // If you instead want to count how many parameters a function is declared to accept, inspect that function's length property.
@@ -495,3 +496,48 @@ console.log(longestString)
 // The type of individual arguments can be determined by indexing arguments:
 
 // console.log(typeof arguments[0]); // returns the type of the first argument
+
+// *************************************************************************************************************************************************************
+
+// Defining a function that concatenates several strings
+// This example defines a function that concatenates several strings. The function's only formal argument is a string containing the characters that separate the items to concatenate.
+
+// function myConcat(sep) {
+//   var args = Array.prototype.slice.call(arguments, 1);
+//   console.log(args.join(sep))
+//   return args.join(sep);
+// }
+
+// // You can pass as many arguments as you like to this function. It returns a string list using each argument in the list:
+
+// // returns "red, orange, blue"
+// myConcat(', ', 'red', 'orange', 'blue');
+
+// // returns "elephant; giraffe; lion; cheetah"
+// myConcat('; ', 'elephant', 'giraffe', 'lion', 'cheetah');
+
+// // returns "sage. basil. oregano. pepper. parsley"
+// myConcat('. ', 'sage', 'basil', 'oregano', 'pepper', 'parsley');
+
+// *************************************************************************************************************************************************************
+
+// Defining a function that creates HTML listsSection
+// This example defines a function that creates a string containing HTML for a list. 
+// The only formal argument for the function is a string that is "u" if the list is to be unordered (bulleted), or "o" if the list is to be ordered (numbered). The function is defined as follows:
+
+function list(type) {
+  var html = '<' + type + 'l><li>';
+  var args = Array.prototype.slice.call(arguments, 1);
+  html += args.join('</li><li>');
+  html += '</li></' + type + 'l>'; // end list
+
+  return html;
+}
+
+// You can pass any number of arguments to this function, and it adds each argument as a list item to a list of the type indicated. For example:
+
+var listHTML = list('u', 'One', 'Two', 'Three');
+console.log(listHTML)
+/* listHTML is:
+"<ul><li>One</li><li>Two</li><li>Three</li></ul>"
+*/

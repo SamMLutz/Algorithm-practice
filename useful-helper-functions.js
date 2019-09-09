@@ -58,3 +58,26 @@
 // function isInArray(value, array) {
 //     return array.indexOf(value) > -1;
 //   }
+
+// *************************************************************************************************************************************************************
+// dynamically create multiple html items with an unknown number of arguments
+// *************************************************************************************************************************************************************
+
+// function list(type) {
+//     var html = '<' + type + 'l><li>';
+//     var args = Array.prototype.slice.call(arguments, 1);
+//     html += args.join('</li><li>');
+//     html += '</li></' + type + 'l>'; // end list
+  
+//     return html;
+//   }
+  
+//   // You can pass any number of arguments to this function, and it adds each argument as a list item to a list of the type indicated. For example:
+  
+//   var listHTML = list('u', 'One', 'Two', 'Three');
+//   console.log(listHTML)
+  /* listHTML is:
+  "<ul><li>One</li><li>Two</li><li>Three</li></ul>"
+  */
+
+  // *************************************************************************************************************************************************************
