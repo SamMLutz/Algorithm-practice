@@ -195,7 +195,47 @@
 
 function destroyer(arr) {
     // Remove all the values
+
+    const args = [...arguments];
+    // console.log(args)
+    const neededArgs = args.slice(1);
+    console.log("neededArgs: ", neededArgs)
+    const firstArr = arguments[0];
+    console.log("firstArr: ", firstArr)
+    // const matchedNums = []
+
+    // neededArgs.forEach((item, index) => {
+    //   if (firstArr.includes(item)) {
+    //     console.log("item: ", item);
+    //     console.log("index: ", index)
+    //     firstArr.splice(item, index+1)
+    //     // matchedNums.push(item);
+    //   }
+    //   else {
+    //     console.log("u confused boi")
+    //   }
+    // })
+
+    neededArgs.forEach((item, index) => {
+      firstArr.forEach((element, index2) => {
+        if (firstArr.includes(item)) {
+          console.log("item: ", item);
+          console.log("index: ", index);
+          console.log("element: ", element)
+          console.log("index2: ", index2)
+          console.log("############")
+          firstArr.splice(element, index2)
+          console.log(firstArr)
+          console.log("**********")
+      }
+    })
+    })
+
+    // console.log("matchedNums: ", matchedNums)
+    // console.log("answer: ", firstArr)
+    
     return arr;
   }
   
   destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+

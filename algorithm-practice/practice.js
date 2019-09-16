@@ -582,6 +582,19 @@
 //   }
 // }
 
+// countdown from N to 0
+
+// const simpleRecursion = n => {
+//     if (n > 0) {
+//         console.log(n);
+//         simpleRecursion(n - 1);
+//     } else {
+//         console.log("done")
+//     }
+// }
+
+// simpleRecursion(9)
+
 // **************************************************************************************************************************************************************
 
 // function SimpleAdding(num) { 
