@@ -855,14 +855,28 @@
 // ************************************************************************************************************************************************
 
 // function getIndexToIns(arr, num) {
-//     var newArr = arr.filter()
+//     arr.push(num)
+//     console.log("arr: ", arr)
+//     const sortedArr = arr.sort((a,b) => {return a-b})
+//     console.log("sortedArr: ", sortedArr)
+//     const answer = sortedArr.indexOf(num);
+//     console.log("answer: ", answer)
 //   }
 
+// function getIndexToIns(arr, num) {
+//     const newArr = [].concat(arr, num).sort((a,b) => {return a-b})
+//     console.log("newArr: ", newArr);
+//     const answer = newArr.indexOf(num);
+//     console.log(answer)
+// }
+
 //   getIndexToIns([40, 60], 50);
+// getIndexToIns([40, 60, 70, 40, 100, 30], 50);
+
 
 // var points = [40, 100, 1, 5, 25, 10];
 // points.sort(function(a, b){return a-b});
-// log(points)
+// console.log(points)
 
 
 
@@ -1416,9 +1430,9 @@
 //   birdTypes.forEach(item => {
 //     if (item > mostSightings) {
 //       mostSightings = item
-      
+
 //     }
-    
+
 //   })
 //   console.log(mostSightings)
 //   console.log(`mostSighted: ${mostSighted}`)
@@ -1450,7 +1464,7 @@
     //          else 
     //             push randomNumber to new array 
 
-    
+
 // const uniqueVals = function(arrLength, maxValue) {
 //     let newArr = []
 

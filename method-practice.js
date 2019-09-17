@@ -521,23 +521,47 @@
 
 // *************************************************************************************************************************************************************
 
-// Defining a function that creates HTML listsSection
+// Defining a function that creates HTML lists
+// *************************************************************************************************************************************************************
 // This example defines a function that creates a string containing HTML for a list. 
 // The only formal argument for the function is a string that is "u" if the list is to be unordered (bulleted), or "o" if the list is to be ordered (numbered). The function is defined as follows:
 
-function list(type) {
-  var html = '<' + type + 'l><li>';
-  var args = Array.prototype.slice.call(arguments, 1);
-  html += args.join('</li><li>');
-  html += '</li></' + type + 'l>'; // end list
+// function list(type) {
+//   var html = '<' + type + 'l><li>';
+//   var args = Array.prototype.slice.call(arguments, 1);
+//   html += args.join('</li><li>');
+//   html += '</li></' + type + 'l>'; // end list
 
-  return html;
-}
+//   return html;
+// }
 
-// You can pass any number of arguments to this function, and it adds each argument as a list item to a list of the type indicated. For example:
+// // You can pass any number of arguments to this function, and it adds each argument as a list item to a list of the type indicated. For example:
 
-var listHTML = list('u', 'One', 'Two', 'Three');
-console.log(listHTML)
-/* listHTML is:
-"<ul><li>One</li><li>Two</li><li>Three</li></ul>"
-*/
+// var listHTML = list('u', 'One', 'Two', 'Three');
+// console.log(listHTML)
+// /* listHTML is:
+// "<ul><li>One</li><li>Two</li><li>Three</li></ul>"
+// */
+
+// Rest, default, and destructured parameters
+// *************************************************************************************************************************************************************
+// The arguments object can be used in conjunction with rest, default, and destructured parameters.
+
+// function foo(...args) {
+//   return args;
+// }
+// foo(1, 2, 3); // [1,2,3]
+// While the presence of rest, default, or destructured parameters does not alter the behavior of the arguments object in strict mode code, 
+// there is a subtle difference for non-strict code.
+
+// If a non-strict function does not contain rest, default, or destructured parameters, then the values in the arguments object do change in sync with the values of the argument variables. 
+// See the code below:
+// // *************************************************************************************************************************************************************
+
+// Difference between rest parameters and the arguments objectSection
+// *************************************************************************************************************************************************************
+// There are three main differences between rest parameters and the arguments object:
+
+// 1. rest parameters are only the ones that haven't been given a separate name (i.e. formally defined in function expression), while the arguments object contains all arguments passed to the function;
+// 2. the arguments object is not a real array, while rest parameters are Array instances, meaning methods like sort, map, forEach or pop can be applied on it directly;
+// 3. the arguments object has additional functionality specific to itself (like the callee property).

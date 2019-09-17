@@ -16,18 +16,16 @@
 
 const getBiggest = arr => {
     let target = 0;
+
     arr.forEach(item => {
         if (item > target) {
             target = item;
         }
-        else {
-            console.log('working')
-        }
-        console.log(target)
-        return target;
     })
+    return target;
 }
 
 
 // console.log(biggest)
-getBiggest([10,9,67,54])
+const biggestNum = getBiggest([10,9,67,54])
+console.log(biggestNum)
