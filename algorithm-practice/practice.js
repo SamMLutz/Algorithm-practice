@@ -870,7 +870,7 @@
 //     console.log(answer)
 // }
 
-//   getIndexToIns([40, 60], 50);
+//   getIndexToIns([40, 60], 50); 
 // getIndexToIns([40, 60, 70, 40, 100, 30], 50);
 
 
