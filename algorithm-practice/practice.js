@@ -7,19 +7,37 @@
 // console.log(str)
 // }
 
-const fixString = str => {
-    const newStr = str.toLowerCase()
-    console.log(newStr)
-}
+// const fixString = str => {
+//     const newStr = str.toLowerCase()
+//     console.log(newStr)
+// }
 
 // es 6
 // var fixString = str => str = str.replace(/\s/g, '').toLowerCase();
 
-fixString("Yurp and Churp")
+// fixString("Yurp and Churp")
 
 // ************************************************************************************************************************************************
 // return a new array with the largest value from each array
 // ************************************************************************************************************************************************
+
+// const largestOfFour = arr => {
+//     let largestNum = [];
+
+//     arr.forEach(item => {
+//         let highestNum = 0;
+//         item.forEach(num => {
+            
+//             console.log("num: ", num)
+
+//             if (num > highestNum) {
+//                 highestNum = num;
+//             }
+//         })
+//         largestNum.push(highestNum)
+//     })
+//     console.log("largestNum: ", largestNum)
+// }
 
 // function largestOfFour(arr) {
 //     // You can do this!
@@ -66,7 +84,8 @@ fixString("Yurp and Churp")
 //   return largestNum
 // }
 
-//   console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
+// console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
+largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])
 
 // function largestOfFour(arr) {
 //   var results = [];
