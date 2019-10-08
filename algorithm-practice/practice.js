@@ -7,9 +7,15 @@
 // console.log(str)
 // }
 
+const fixString = str => {
+    const newStr = str.toLowerCase()
+    console.log(newStr)
+}
+
 // es 6
 // var fixString = str => str = str.replace(/\s/g, '').toLowerCase();
-// console.log(fixString("Yurp and Churp"))
+
+fixString("Yurp and Churp")
 
 // ************************************************************************************************************************************************
 // return a new array with the largest value from each array

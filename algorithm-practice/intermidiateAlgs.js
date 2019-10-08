@@ -193,49 +193,210 @@
 // Remove all elements from the initial array that are of the same value as these arguments.
 // *************************************************************************************************************************************************************
 
-function destroyer(arr) {
-    // Remove all the values
+// function destroyer(arr) {
+//     // Remove all the values
 
-    const args = [...arguments];
-    // console.log(args)
-    const neededArgs = args.slice(1);
-    console.log("neededArgs: ", neededArgs)
-    const firstArr = arguments[0];
-    console.log("firstArr: ", firstArr)
-    // const matchedNums = []
+//     const args = [...arguments];
+//     // console.log(args)
+//     const neededArgs = args.slice(1);
+//     console.log("neededArgs: ", neededArgs)
+//     const firstArr = arguments[0];
+//     console.log("firstArr: ", firstArr)
+//     // const matchedNums = []
 
-    // neededArgs.forEach((item, index) => {
-    //   if (firstArr.includes(item)) {
-    //     console.log("item: ", item);
-    //     console.log("index: ", index)
-    //     firstArr.splice(item, index+1)
-    //     // matchedNums.push(item);
-    //   }
-    //   else {
-    //     console.log("u confused boi")
-    //   }
-    // })
+//     // neededArgs.forEach((item, index) => {
+//     //   if (firstArr.includes(item)) {
+//     //     console.log("item: ", item);
+//     //     console.log("index: ", index)
+//     //     firstArr.splice(item, index+1)
+//     //     // matchedNums.push(item);
+//     //   }
+//     //   else {
+//     //     console.log("u confused boi")
+//     //   }
+//     // })
 
-    neededArgs.forEach((item, index) => {
-      firstArr.forEach((element, index2) => {
-        if (firstArr.includes(item)) {
-          console.log("item: ", item);
-          console.log("index: ", index);
-          console.log("element: ", element)
-          console.log("index2: ", index2)
-          console.log("############")
-          firstArr.splice(element, index2)
-          console.log(firstArr)
-          console.log("**********")
-      }
-    })
-    })
+//     neededArgs.forEach((item, index) => {
+//       firstArr.forEach((element, index2) => {
+//         if (firstArr.includes(item)) {
+//           let newArr = [].concat(firstArr)
+//           console.log("newArr: ", newArr)
 
-    // console.log("matchedNums: ", matchedNums)
-    // console.log("answer: ", firstArr)
+//           console.log("item: ", item);
+//           console.log("index: ", index);
+//           console.log("element: ", element)
+//           console.log("index2: ", index2)
+//           console.log("############")
+//           newArr.splice(element, index2)
+//           console.log(firstArr)
+//           console.log("**********")
+//       }
+//     })
+//     })
+
+//     // console.log("matchedNums: ", matchedNums)
+//     // console.log("answer: ", firstArr)
     
-    return arr;
-  }
-  
-  destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+//     return arr;
+//   }
 
+// const remove = (arr, toRemove) => {
+//   const result = arr.filter(item => {
+//     return item !== toRemove
+//   })
+//   console.log("result: ", result)
+//   return result
+// }
+
+
+// function destroyer(arr) {
+//   // Remove all the values
+
+//   const args = [...arguments];
+//   // console.log(args)
+
+//   const neededArgs = args.slice(1);
+//   console.log("neededArgs: ", neededArgs)
+
+//   const firstArr = arguments[0];
+//   console.log("firstArr: ", firstArr)
+ 
+//   neededArgs.forEach(item => {
+//     console.log("item: ", item)
+    
+//     remove(arr, item)
+//     console.log("########")
+//   })
+
+
+//   return arr;
+// }
+
+const getResult = (arr, toRemove) => {
+  const result = arr.filter(item => {
+    return item !== toRemove
+ })
+  console.log("result: ", result)
+  return result
+}
+
+// function destroyer(arr) {
+//   // Remove all the values
+
+//   const args = [...arguments];
+//   // console.log(args)
+
+//   const neededArgs = args.slice(1);
+//   console.log("neededArgs: ", neededArgs)
+
+//   const firstArr = arguments[0];
+//   console.log("firstArr: ", firstArr)
+
+//   // const result = firstArr.reduce(item => {
+    
+//   // })
+//   neededArgs.forEach(item => {
+//     getResult(firstArr, item)
+//   })
+
+//   return arr;
+// }
+  
+//   destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+// const remove = (arr, toRemove) => {
+//   const removed = []
+
+//   arr.forEach(item => {
+//   if (item === toRemove) {
+//     removed.push(item)
+//   }
+// })
+//   console.log(removed)
+//   console.log(arr)
+// }
+
+
+// remove([1,2,3,1,2,3], 2)
+
+// let arr = [1,2,3,1,2,3,4]
+
+// const toRemove = [2,4]
+
+// const result = arr.filter(item => {
+//    return item !== toRemove;
+// })
+
+
+
+// getResult([1,2,3,4,5,6,6], 6)
+
+// console.log(result)
+
+// const arrDestroyer = function (acc, curElement) {
+//   // create a new array without curElement
+//   const arg = 
+//   console.log("acc: ", acc)
+//   console.log("curElement: ", curElement)
+//   const newArr = acc.filter(item => {
+//     console.log("item: ", item)
+//     return item !== acc.indexOf(curElement)
+//   })
+//   return newArr;
+// }
+
+// const answer = arr.reduce(arrDestroyer, arr)
+
+// console.log(answer)
+
+// function destroyer(arr) {
+//   var args = Array.from(arguments).slice(1);
+//   console.log("args: ", args)
+//   console.log("arr: ", arr)
+//   return arr.filter(function(item) {
+//     return !args.includes(item);
+//   });
+// }
+
+// function destroyer(arr) {
+//   var args = Array.prototype.slice.call(arguments);
+
+//   for (var i = 0; i < arr.length; i++) {
+//     for (var j = 0; j < args.length; j++) {
+//       if (arr[i] === args[j]) {
+//         delete arr[i];
+//       }
+//     }
+//   }
+//   return arr.filter(Boolean);
+// }
+
+// const destroyer = (arr, ...args) =>  {
+//    console.log("args: ", ...args)
+//    return arr.filter(i => !args.includes(i))
+// };
+
+// const churp = destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+// console.log(churp)
+
+// *************************************************************************************************************************************************************
+// Make a function that looks through an array of objects (first argument) and returns an array of all objects that have matching name and value pairs (second argument). 
+// Each name and value pair of the source object has to be present in the object from the collection if it is to be included in the returned array.
+// *************************************************************************************************************************************************************
+
+
+// function whatIsInAName(collection, source) {
+//   console.log("collection: ", collection)
+//   console.log("###########")
+//   console.log(collection[0].first)
+//   // What's in a name?
+//   var arr = [];
+//   // Only change code below this line
+  
+  
+//   // Only change code above this line
+//   return arr;
+// }
+
+// whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
