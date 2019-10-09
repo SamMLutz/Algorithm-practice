@@ -27,7 +27,7 @@
 //     arr.forEach(item => {
 //         let highestNum = 0;
 //         item.forEach(num => {
-            
+
 //             if (num > highestNum) {
 //                 highestNum = num;
 //             }
@@ -103,14 +103,14 @@
 // //  find the last letter in a string and check if it is equal to second parameter (target)
 // ************************************************************************************************************************************************
 
-const confirmEnding = (str, target) => {
-    let lastLetter = str.slice(str.length -1)
-    console.log("lastLetter: ", lastLetter)
-    if (lastLetter === target) {
-        console.log(true);
-        return true;
-    }
-}
+// const confirmEnding = (str, target) => {
+//     let lastLetter = str.slice(str.length -1)
+//     console.log("lastLetter: ", lastLetter)
+//     if (lastLetter === target) {
+//         console.log(true);
+//         return true;
+//     }
+// }
 
 // function confirmEnding(str, target) {
 //   var lastLetter;
@@ -128,25 +128,8 @@ const confirmEnding = (str, target) => {
 //   return str;
 // }
 
-// // es 6
-// const confirmEnding = (str, target) => {
-//   var lastLetter;
-//   // loop the first argument and return the last letter
-//   // compare the last letter to the second argument
-//   for (var i = 0; i < str.length; i++) {
-//     if (str.indexOf(str[i]) == str.length - 1) {
-//       lastLetter = str[i]
-//     }
-//   }
-//   if (lastLetter == target) {
-//     return true
-//   }
-//   console.log(lastLetter)
-//   return str;
-// }
-
 // console.log(confirmEnding("Bastian", "n"));
-confirmEnding("Bastian", "n")
+// confirmEnding("Bastian", "n")
 
 // ************************************************************************************************************************************************
 // //   Check if a string (first argument, str) ends with the given target string (second argument, target).
@@ -155,32 +138,26 @@ confirmEnding("Bastian", "n")
 // function confirmEnding(str, target) {
 //     // console.log(target.length)
 //     var targetLength = target.length
-//     // console.log(targetLength)
+//     console.log("targetLength: " , targetLength)
 //     var str2 = str.slice(-targetLength)
-//     // console.log(str2)
+//     console.log("str2: ", str2)
 //     if (str2 == target){
 //         return true
 //     } else {
 //         return false
 //     }
-//     return str;
-//   }
+// }
 
 // es 6
 // const confirmEnding = (str, target) => {
-//     var targetLength = target.length
-//     var str2 = str.slice(-targetLength)
+//     const targetLength = target.length
+//     const str2 = str.slice(-targetLength)
 //     console.log("str2 = " + str2)
-//     // if (str2 == target){
-//     //     return true 
-//     // } else {
-//     //     return false
-//     // }
 //     str = str2 == target ? true: false
 //     return str;
 // }
 
-// console.log(confirmEnding("Bastian", "n"));
+// console.log(confirmEnding("Bastian", "ian"));
 // confirmEnding("Bastian", "n")
 
 // ************************************************************************************************************************************
@@ -232,11 +209,13 @@ confirmEnding("Bastian", "n")
 
 // es 6
 // const truncateString = (str, num) => {
-//   var newStr = str.slice(0,num)
-//   newStr = newStr + "..."
-//  console.log(newStr)
-//  return str;
+//     let newStr = str.slice(0, num) + "..."
+//     console.log(newStr)
+//     return newStr;
 // }
+
+// let churp = truncateString("yurpity durp", 8)
+// console.log("churp: ", churp)
 
 // truncateString("A Storm of Swords", 8);
 
@@ -254,16 +233,16 @@ confirmEnding("Bastian", "n")
 // }
 
 // es 6
-// const simpleArraySum = ar => {
-//   var sum = 0;
-//   for (var i = 0; i < ar.length; i++) {
-//     sum = sum += ar[i]
-//   }
-//   console.log(sum)
-//   return sum
-// }
+const simpleArraySum = ar => {
+  let sum = 0;
+  for (var i = 0; i < ar.length; i++) {
+    sum = sum += ar[i]
+  }
+  console.log(sum)
+  return sum
+}
 
-// simpleArraySum([1,3,4,5,6])
+simpleArraySum([1,3,4,5,6])
 
 // ************************************************************************************************************************************************
 //  compare the triplets and add 1 to each corresponding score if greater thatn its counterpart
