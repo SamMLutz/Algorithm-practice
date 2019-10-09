@@ -10,7 +10,7 @@
 // const fixString = str => {
 //     const newStr = str.toLowerCase()
 //     console.log(newStr)
-// }
+//
 
 // es 6
 // var fixString = str => str = str.replace(/\s/g, '').toLowerCase();
@@ -28,8 +28,6 @@
 //         let highestNum = 0;
 //         item.forEach(num => {
             
-//             console.log("num: ", num)
-
 //             if (num > highestNum) {
 //                 highestNum = num;
 //             }
@@ -85,7 +83,7 @@
 // }
 
 // console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));
-largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])
+// largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])
 
 // function largestOfFour(arr) {
 //   var results = [];
@@ -104,6 +102,15 @@ largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 85
 // ************************************************************************************************************************************************
 // //  find the last letter in a string and check if it is equal to second parameter (target)
 // ************************************************************************************************************************************************
+
+const confirmEnding = (str, target) => {
+    let lastLetter = str.slice(str.length -1)
+    console.log("lastLetter: ", lastLetter)
+    if (lastLetter === target) {
+        console.log(true);
+        return true;
+    }
+}
 
 // function confirmEnding(str, target) {
 //   var lastLetter;
@@ -139,6 +146,7 @@ largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 85
 // }
 
 // console.log(confirmEnding("Bastian", "n"));
+confirmEnding("Bastian", "n")
 
 // ************************************************************************************************************************************************
 // //   Check if a string (first argument, str) ends with the given target string (second argument, target).
