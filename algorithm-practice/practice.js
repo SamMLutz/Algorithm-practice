@@ -233,16 +233,25 @@
 // }
 
 // es 6
-const simpleArraySum = ar => {
-  let sum = 0;
-  for (var i = 0; i < ar.length; i++) {
-    sum = sum += ar[i]
-  }
-  console.log(sum)
-  return sum
-}
+// const simpleArraySum = ar => {
+//   let sum = 0;
+//   for (var i = 0; i < ar.length; i++) {
+//     sum = sum += ar[i]
+//   }
+//   console.log(sum)
+//   return sum
+// }
 
-simpleArraySum([1,3,4,5,6])
+// const simpleArraySum = arr => {
+//     let sum = 0;
+//     arr.forEach(item => {
+//         sum += item
+//     })
+//     console.log("sum: ", sum)
+//     return sum;
+// }
+
+// simpleArraySum([1,3,4,5,6])
 
 // ************************************************************************************************************************************************
 //  compare the triplets and add 1 to each corresponding score if greater thatn its counterpart
@@ -324,6 +333,7 @@ simpleArraySum([1,3,4,5,6])
 //         // }
 //         func(arr[i]) ? num = arr[i] : "error"
 //     }
+//     console.log("num: ", num)
 //     return num;
 // }
 
@@ -339,7 +349,7 @@ simpleArraySum([1,3,4,5,6])
 //   return num;
 // }
 
-// // findElement([1, 2, 3, 4], num => num % 2 === 0);
+// findElement([1, 2, 3, 4], num => num % 2 === 0);
 // // console.log(findElement([1, 2, 3, 4], num => num % 2 === 0))
 // // findElement([1, 3, 5, 8, 9, 10], function (num) { return num % 2 === 0; })
 // findElement([1,3,5,7,9], num => (num - 2) === 3);
@@ -356,6 +366,15 @@ simpleArraySum([1,3,4,5,6])
 //   }
 //   console.log(sum);
 //   return sum;
+// }
+
+// const aVeryBigSum = ar => {
+//     let sum = 0;
+//     ar.forEach(item => {
+//         sum += item;
+//     })
+//     console.log("sum: ", sum)
+//     return sum
 // }
 
 // aVeryBigSum([1000000001, 1000000002, 1000000003, 1000000004, 1000000005])
@@ -385,6 +404,19 @@ simpleArraySum([1,3,4,5,6])
 //         console.log(currentNum)
 //     }
 //     console.log(newNumArray)
+// }
+
+// const reverseNumber = num => {
+//     let answer = [];
+//     let numArr = num.toString().split("");
+//     console.log("NumArr: ", numArr);
+
+//     for (let i = numArr.length - 1; i > - 1; i--) {
+//         console.log(numArr[i])
+//         answer.push(numArr[i])
+//     }
+//     console.log("answer: ", answer)
+//     return answer
 // }
 
 // reverseNumber(3456)
@@ -509,7 +541,7 @@ simpleArraySum([1,3,4,5,6])
 // return the longest word in a sentence
 // ************************************************************************************************************************************************
 
-// function LongestWord(sen) { 
+// function longestWord(sen) { 
 //   // code goes here
 //   sen = sen.replace(/[^a-zA-Z ]/g, "");
 //   var biggest = 0;
@@ -530,7 +562,26 @@ simpleArraySum([1,3,4,5,6])
 //   return longest; 
 // }
 
-// LongestWord("a beautiful sentence^&!");
+// const longestWord = sen => {
+//     let accumulator = 0;
+//     let longest;
+
+//     const senArr = sen.replace(/[^a-zA-Z ]/g, "").split(" ");
+//     console.log("senArr: ", senArr)
+
+//     senArr.forEach(item => {
+//         if (item.length > accumulator) {
+//             accumulator = item.length;
+//             longest = item;
+//         }
+//         console.log("accumulator: ", accumulator)
+//         console.log("longest: ", longest)
+//     })
+//     console.log("longest: ", longest)
+//     return longest
+// }
+
+// longestWord("a beautiful sentence^&!");
 
 // *************************************************************************************************************************************************************
 // factorialize a a given number
