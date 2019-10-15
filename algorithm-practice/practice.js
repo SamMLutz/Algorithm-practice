@@ -633,19 +633,22 @@
 //   if (str === '') return '';
 //   return revStr(str.substr(1)) + str[0];
 // }
-// revStr('cat');
-// // tac
+
+// console.log(revStr('cat'));
 
 //  ADDING NUM -1 STARTING FROM NUM AND GOING TO 0
 
-// function SimpleAdding(num) { 
+// function simpleAdding(num) { 
 //   if (num === 1) {
 //     return 1;
 //   }
 //   else {
-//     return num + SimpleAdding(num -1);
+//     return num + simpleAdding(num -1);
 //   }
 // }
+
+// const simplyAdded = simpleAdding(10)
+// console.log("simplyAdded: ", simplyAdded)
 
 // countdown from N to 0
 
