@@ -257,27 +257,29 @@
 //  compare the triplets and add 1 to each corresponding score if greater thatn its counterpart
 // ************************************************************************************************************************************************
 
-// function compareTriplets(a, b) {
-//   let scores = [0, 0]
+function compareTriplets(a, b) {
+  let scores = [0, 0]
 
-//   for (let i = 0; i < a.length; i++) {
-//     console.log("a value: " + a[i])
-//     console.log("b value " + b[i])
-//     if (a[i] > b[i]) {
-//       scores[0]++
-//     }
-//     else if (b[i] > a[i]) {
-//       scores[1]++
-//     }
-//     else {
-//       console.log("error")
-//     }
-//   }
-//   console.log(scores);
-//   return scores;
-// }
+  for (let i = 0; i < a.length; i++) {
+    console.log("a value: " + a[i])
+    console.log("b value " + b[i])
+    console.log("+++++++++")
+    
+    if (a[i] > b[i]) {
+      scores[0]++
+    }
+    else if (b[i] > a[i]) {
+      scores[1]++
+    }
+    else {
+      console.log("error")
+    }
+  }
+  console.log("scores: ", scores);
+  return scores;
+}
 
-// compareTriplets([1, 5, 3], [2, 4, 6,]);
+compareTriplets([1, 5, 3], [2, 4, 6,]);
 
 // var array1 = ['a', 'b', 'c'];
 
